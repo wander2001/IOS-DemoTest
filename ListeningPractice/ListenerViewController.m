@@ -181,7 +181,7 @@
 }
 
 - (IBAction)C5:(id)sender {
-    [_soundBankPlayer queueNote:72 gain:0.4f];
+    [_soundBankPlayer queueNote:73 gain:0.4f];
     [_soundBankPlayer playQueuedNotes];
 }
 
