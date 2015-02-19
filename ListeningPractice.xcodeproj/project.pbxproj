@@ -39,6 +39,9 @@
 		6F1DD1071A8D8C2F00838476 /* P200 Piano F#7.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0F21A8D8C2F00838476 /* P200 Piano F#7.caf */; };
 		6F1DD1081A8D8C2F00838476 /* P200 Piano G#9.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0F31A8D8C2F00838476 /* P200 Piano G#9.caf */; };
 		6F1DD1091A8D8C2F00838476 /* Piano.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0F41A8D8C2F00838476 /* Piano.plist */; };
+		6F853FB61A95AD3B00BB1FC7 /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F853FB11A95AD3B00BB1FC7 /* AudioController.m */; };
+		6F853FB71A95AD3B00BB1FC7 /* PitchDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F853FB31A95AD3B00BB1FC7 /* PitchDetector.m */; };
+		6F853FB81A95AD3B00BB1FC7 /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F853FB41A95AD3B00BB1FC7 /* TPCircularBuffer.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,12 @@
 		6F1DD0F31A8D8C2F00838476 /* P200 Piano G#9.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano G#9.caf"; sourceTree = "<group>"; };
 		6F1DD0F41A8D8C2F00838476 /* Piano.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Piano.plist; sourceTree = "<group>"; };
 		6F45F73E1A943CDB007E8287 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		6F853FB01A95AD3B00BB1FC7 /* AudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioController.h; path = ListeningPractice/AudioController.h; sourceTree = "<group>"; };
+		6F853FB11A95AD3B00BB1FC7 /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioController.m; path = ListeningPractice/AudioController.m; sourceTree = "<group>"; };
+		6F853FB21A95AD3B00BB1FC7 /* PitchDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PitchDetector.h; path = ListeningPractice/PitchDetector.h; sourceTree = "<group>"; };
+		6F853FB31A95AD3B00BB1FC7 /* PitchDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PitchDetector.m; path = ListeningPractice/PitchDetector.m; sourceTree = "<group>"; };
+		6F853FB41A95AD3B00BB1FC7 /* TPCircularBuffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = TPCircularBuffer.c; path = ListeningPractice/TPCircularBuffer.c; sourceTree = "<group>"; };
+		6F853FB51A95AD3B00BB1FC7 /* TPCircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPCircularBuffer.h; path = ListeningPractice/TPCircularBuffer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +134,7 @@
 		6F1DD0A51A8D862D00838476 = {
 			isa = PBXGroup;
 			children = (
+				6F853FAF1A95ABF500BB1FC7 /* FFT */,
 				6F45F73E1A943CDB007E8287 /* CoreAudio.framework */,
 				6F0286FF1A8DB6F300BA12E4 /* Resources */,
 				6F1DD0DF1A8D8C2F00838476 /* Sounds */,
@@ -224,6 +234,19 @@
 			);
 			name = Sounds;
 			path = "../../../SoundBankPlayer-master/Sounds";
+			sourceTree = "<group>";
+		};
+		6F853FAF1A95ABF500BB1FC7 /* FFT */ = {
+			isa = PBXGroup;
+			children = (
+				6F853FB01A95AD3B00BB1FC7 /* AudioController.h */,
+				6F853FB11A95AD3B00BB1FC7 /* AudioController.m */,
+				6F853FB21A95AD3B00BB1FC7 /* PitchDetector.h */,
+				6F853FB31A95AD3B00BB1FC7 /* PitchDetector.m */,
+				6F853FB41A95AD3B00BB1FC7 /* TPCircularBuffer.c */,
+				6F853FB51A95AD3B00BB1FC7 /* TPCircularBuffer.h */,
+			);
+			name = FFT;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,10 +372,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F853FB61A95AD3B00BB1FC7 /* AudioController.m in Sources */,
 				6F1DD0DD1A8D8A5000838476 /* OpenALSupport.c in Sources */,
 				6F1DD0BA1A8D862D00838476 /* ListenerViewController.m in Sources */,
 				6F1DD0B71A8D862D00838476 /* AppDelegate.m in Sources */,
 				6F1DD0B41A8D862D00838476 /* main.m in Sources */,
+				6F853FB71A95AD3B00BB1FC7 /* PitchDetector.m in Sources */,
+				6F853FB81A95AD3B00BB1FC7 /* TPCircularBuffer.c in Sources */,
 				6F1DD0DE1A8D8A5000838476 /* SoundBankPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
