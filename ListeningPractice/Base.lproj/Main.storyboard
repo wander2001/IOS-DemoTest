@@ -18,7 +18,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVQ-qL-VPt">
                                 <rect key="frame" x="155" y="804" width="60" height="200"/>
-                                <state key="normal" backgroundImage="keyBackground01.png">
+                                <state key="normal" backgroundImage="ivory_keyup.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -27,7 +27,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ii5-Rh-dCY">
                                 <rect key="frame" x="212" y="804" width="60" height="200"/>
-                                <state key="normal" backgroundImage="keyBackground01.png">
+                                <state key="normal" backgroundImage="ivory_keyup.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -36,7 +36,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geZ-uF-2e2">
                                 <rect key="frame" x="269" y="804" width="60" height="200"/>
-                                <state key="normal" backgroundImage="keyBackground01.png">
+                                <state key="normal" backgroundImage="ivory_keyup.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -45,7 +45,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aq-7B-Xne">
                                 <rect key="frame" x="253" y="804" width="35" height="140"/>
-                                <state key="normal" backgroundImage="keyBackground02.png">
+                                <state key="normal" backgroundImage="ebony_keyup.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -54,7 +54,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRj-X3-6nQ">
                                 <rect key="frame" x="382" y="804" width="60" height="200"/>
-                                <state key="normal" backgroundImage="keyBackground01.png">
+                                <state key="normal" backgroundImage="ivory_keyup.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -63,7 +63,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2w-pV-QkA">
                                 <rect key="frame" x="553" y="804" width="60" height="200"/>
-                                <state key="normal" backgroundImage="keyBackground01.png">
+                                <state key="normal" backgroundImage="ivory_keyup.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -72,7 +72,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVC-Us-6nq">
                                 <rect key="frame" x="496" y="804" width="60" height="200"/>
-                                <state key="normal" backgroundImage="keyBackground01.png">
+                                <state key="normal" backgroundImage="ivory_keyup.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -81,7 +81,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N60-0w-IT7">
                                 <rect key="frame" x="439" y="804" width="60" height="200"/>
-                                <state key="normal" backgroundImage="keyBackground01.png">
+                                <state key="normal" backgroundImage="ivory_keyup.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -90,7 +90,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HlE-bz-EIj">
                                 <rect key="frame" x="196" y="804" width="35" height="140"/>
-                                <state key="normal" backgroundImage="keyBackground02.png">
+                                <state key="normal" backgroundImage="ebony_keyup.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -99,7 +99,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7br-Dw-bcN">
                                 <rect key="frame" x="325" y="804" width="60" height="200"/>
-                                <state key="normal" backgroundImage="keyBackground01.png">
+                                <state key="normal" backgroundImage="ivory_keyup.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -108,7 +108,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqu-Bz-TWB">
                                 <rect key="frame" x="366" y="804" width="35" height="140"/>
-                                <state key="normal" backgroundImage="keyBackground02.png">
+                                <state key="normal" backgroundImage="ebony_keyup.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -117,7 +117,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7EE-xW-9WF">
                                 <rect key="frame" x="423" y="804" width="35" height="140"/>
-                                <state key="normal" backgroundImage="keyBackground02.png">
+                                <state key="normal" backgroundImage="ebony_keyup.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -126,7 +126,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pK7-WF-YeV">
                                 <rect key="frame" x="480" y="804" width="35" height="140"/>
-                                <state key="normal" backgroundImage="keyBackground02.png">
+                                <state key="normal" backgroundImage="ebony_keyup.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -205,7 +205,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="keyBackground01.png" width="45" height="140"/>
-        <image name="keyBackground02.png" width="25" height="65"/>
+        <image name="ebony_keyup.png" width="48" height="191"/>
+        <image name="ivory_keyup.png" width="78" height="332"/>
     </resources>
 </document>

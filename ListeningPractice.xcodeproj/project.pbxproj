@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6F0287011A8DB76900BA12E4 /* keyBackground02.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F0287001A8DB76900BA12E4 /* keyBackground02.png */; };
-		6F0287031A8DB78B00BA12E4 /* keyBackground01.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F0287021A8DB78B00BA12E4 /* keyBackground01.png */; };
 		6F1DD0B41A8D862D00838476 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DD0B31A8D862D00838476 /* main.m */; };
 		6F1DD0B71A8D862D00838476 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DD0B61A8D862D00838476 /* AppDelegate.m */; };
 		6F1DD0BA1A8D862D00838476 /* ListenerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DD0B91A8D862D00838476 /* ListenerViewController.m */; };
@@ -16,34 +14,36 @@
 		6F1DD0BF1A8D862D00838476 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0BE1A8D862D00838476 /* Images.xcassets */; };
 		6F1DD0C21A8D862D00838476 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0C01A8D862D00838476 /* LaunchScreen.xib */; };
 		6F1DD0CE1A8D862D00838476 /* ListeningPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DD0CD1A8D862D00838476 /* ListeningPracticeTests.m */; };
-		6F1DD0DD1A8D8A5000838476 /* OpenALSupport.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DD0D91A8D8A5000838476 /* OpenALSupport.c */; };
-		6F1DD0DE1A8D8A5000838476 /* SoundBankPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DD0DC1A8D8A5000838476 /* SoundBankPlayer.m */; };
-		6F1DD0F51A8D8C2F00838476 /* P200 Piano A#2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0E01A8D8C2F00838476 /* P200 Piano A#2.caf */; };
-		6F1DD0F61A8D8C2F00838476 /* P200 Piano A#3.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0E11A8D8C2F00838476 /* P200 Piano A#3.caf */; };
-		6F1DD0F71A8D8C2F00838476 /* P200 Piano A#4.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0E21A8D8C2F00838476 /* P200 Piano A#4.caf */; };
-		6F1DD0F81A8D8C2F00838476 /* P200 Piano A#5.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0E31A8D8C2F00838476 /* P200 Piano A#5.caf */; };
-		6F1DD0F91A8D8C2F00838476 /* P200 Piano A#7.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0E41A8D8C2F00838476 /* P200 Piano A#7.caf */; };
-		6F1DD0FA1A8D8C2F00838476 /* P200 Piano C10.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0E51A8D8C2F00838476 /* P200 Piano C10.caf */; };
-		6F1DD0FB1A8D8C2F00838476 /* P200 Piano C7.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0E61A8D8C2F00838476 /* P200 Piano C7.caf */; };
-		6F1DD0FC1A8D8C2F00838476 /* P200 Piano D#8.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0E71A8D8C2F00838476 /* P200 Piano D#8.caf */; };
-		6F1DD0FD1A8D8C2F00838476 /* P200 Piano D2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0E81A8D8C2F00838476 /* P200 Piano D2.caf */; };
-		6F1DD0FE1A8D8C2F00838476 /* P200 Piano D3.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0E91A8D8C2F00838476 /* P200 Piano D3.caf */; };
-		6F1DD0FF1A8D8C2F00838476 /* P200 Piano D4.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0EA1A8D8C2F00838476 /* P200 Piano D4.caf */; };
-		6F1DD1001A8D8C2F00838476 /* P200 Piano D5.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0EB1A8D8C2F00838476 /* P200 Piano D5.caf */; };
-		6F1DD1011A8D8C2F00838476 /* P200 Piano D6.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0EC1A8D8C2F00838476 /* P200 Piano D6.caf */; };
-		6F1DD1021A8D8C2F00838476 /* P200 Piano F#2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0ED1A8D8C2F00838476 /* P200 Piano F#2.caf */; };
-		6F1DD1031A8D8C2F00838476 /* P200 Piano F#3.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0EE1A8D8C2F00838476 /* P200 Piano F#3.caf */; };
-		6F1DD1041A8D8C2F00838476 /* P200 Piano F#4.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0EF1A8D8C2F00838476 /* P200 Piano F#4.caf */; };
-		6F1DD1051A8D8C2F00838476 /* P200 Piano F#5.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0F01A8D8C2F00838476 /* P200 Piano F#5.caf */; };
-		6F1DD1061A8D8C2F00838476 /* P200 Piano F#6.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0F11A8D8C2F00838476 /* P200 Piano F#6.caf */; };
-		6F1DD1071A8D8C2F00838476 /* P200 Piano F#7.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0F21A8D8C2F00838476 /* P200 Piano F#7.caf */; };
-		6F1DD1081A8D8C2F00838476 /* P200 Piano G#9.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0F31A8D8C2F00838476 /* P200 Piano G#9.caf */; };
-		6F1DD1091A8D8C2F00838476 /* Piano.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0F41A8D8C2F00838476 /* Piano.plist */; };
-		6F853FB61A95AD3B00BB1FC7 /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F853FB11A95AD3B00BB1FC7 /* AudioController.m */; };
-		6F853FB71A95AD3B00BB1FC7 /* PitchDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F853FB31A95AD3B00BB1FC7 /* PitchDetector.m */; };
-		6F853FB81A95AD3B00BB1FC7 /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F853FB41A95AD3B00BB1FC7 /* TPCircularBuffer.c */; };
-		6F853FBB1A95BDD600BB1FC7 /* correct.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FB91A95BDD600BB1FC7 /* correct.jpeg */; };
-		6F853FBC1A95BDD600BB1FC7 /* wrong.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FBA1A95BDD600BB1FC7 /* wrong.jpeg */; };
+		6F853FC31A95C1B300BB1FC7 /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F853FBE1A95C1B300BB1FC7 /* AudioController.m */; };
+		6F853FC41A95C1B300BB1FC7 /* PitchDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F853FC01A95C1B300BB1FC7 /* PitchDetector.m */; };
+		6F853FC51A95C1B300BB1FC7 /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F853FC11A95C1B300BB1FC7 /* TPCircularBuffer.c */; };
+		6F853FCF1A95C1F400BB1FC7 /* OpenALSupport.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F853FCB1A95C1F400BB1FC7 /* OpenALSupport.c */; };
+		6F853FD01A95C1F400BB1FC7 /* SoundBankPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F853FCE1A95C1F400BB1FC7 /* SoundBankPlayer.m */; };
+		6F853FE71A95C20A00BB1FC7 /* P200 Piano A#2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FD21A95C20A00BB1FC7 /* P200 Piano A#2.caf */; };
+		6F853FE81A95C20A00BB1FC7 /* P200 Piano A#3.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FD31A95C20A00BB1FC7 /* P200 Piano A#3.caf */; };
+		6F853FE91A95C20A00BB1FC7 /* P200 Piano A#4.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FD41A95C20A00BB1FC7 /* P200 Piano A#4.caf */; };
+		6F853FEA1A95C20A00BB1FC7 /* P200 Piano A#5.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FD51A95C20A00BB1FC7 /* P200 Piano A#5.caf */; };
+		6F853FEB1A95C20A00BB1FC7 /* P200 Piano A#7.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FD61A95C20A00BB1FC7 /* P200 Piano A#7.caf */; };
+		6F853FEC1A95C20A00BB1FC7 /* P200 Piano C10.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FD71A95C20A00BB1FC7 /* P200 Piano C10.caf */; };
+		6F853FED1A95C20A00BB1FC7 /* P200 Piano C7.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FD81A95C20A00BB1FC7 /* P200 Piano C7.caf */; };
+		6F853FEE1A95C20A00BB1FC7 /* P200 Piano D#8.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FD91A95C20A00BB1FC7 /* P200 Piano D#8.caf */; };
+		6F853FEF1A95C20A00BB1FC7 /* P200 Piano D2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FDA1A95C20A00BB1FC7 /* P200 Piano D2.caf */; };
+		6F853FF01A95C20A00BB1FC7 /* P200 Piano D3.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FDB1A95C20A00BB1FC7 /* P200 Piano D3.caf */; };
+		6F853FF11A95C20A00BB1FC7 /* P200 Piano D4.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FDC1A95C20A00BB1FC7 /* P200 Piano D4.caf */; };
+		6F853FF21A95C20A00BB1FC7 /* P200 Piano D5.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FDD1A95C20A00BB1FC7 /* P200 Piano D5.caf */; };
+		6F853FF31A95C20A00BB1FC7 /* P200 Piano D6.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FDE1A95C20A00BB1FC7 /* P200 Piano D6.caf */; };
+		6F853FF41A95C20A00BB1FC7 /* P200 Piano F#2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FDF1A95C20A00BB1FC7 /* P200 Piano F#2.caf */; };
+		6F853FF51A95C20A00BB1FC7 /* P200 Piano F#3.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FE01A95C20A00BB1FC7 /* P200 Piano F#3.caf */; };
+		6F853FF61A95C20A00BB1FC7 /* P200 Piano F#4.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FE11A95C20A00BB1FC7 /* P200 Piano F#4.caf */; };
+		6F853FF71A95C20A00BB1FC7 /* P200 Piano F#5.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FE21A95C20A00BB1FC7 /* P200 Piano F#5.caf */; };
+		6F853FF81A95C20A00BB1FC7 /* P200 Piano F#6.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FE31A95C20A00BB1FC7 /* P200 Piano F#6.caf */; };
+		6F853FF91A95C20A00BB1FC7 /* P200 Piano F#7.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FE41A95C20A00BB1FC7 /* P200 Piano F#7.caf */; };
+		6F853FFA1A95C20A00BB1FC7 /* P200 Piano G#9.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FE51A95C20A00BB1FC7 /* P200 Piano G#9.caf */; };
+		6F853FFB1A95C20A00BB1FC7 /* Piano.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FE61A95C20A00BB1FC7 /* Piano.plist */; };
+		6F8540011A95C2A500BB1FC7 /* correct.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FFD1A95C2A500BB1FC7 /* correct.jpeg */; };
+		6F8540021A95C2A500BB1FC7 /* ebony_keyup.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FFE1A95C2A500BB1FC7 /* ebony_keyup.png */; };
+		6F8540031A95C2A500BB1FC7 /* ivory_keyup.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FFF1A95C2A500BB1FC7 /* ivory_keyup.png */; };
+		6F8540041A95C2A500BB1FC7 /* wrong.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6F8540001A95C2A500BB1FC7 /* wrong.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +57,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6F0287001A8DB76900BA12E4 /* keyBackground02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = keyBackground02.png; path = ../../../../Downloads/Day19/keyBackground02.png; sourceTree = "<group>"; };
-		6F0287021A8DB78B00BA12E4 /* keyBackground01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = keyBackground01.png; path = ../../../../Downloads/Day19/keyBackground01.png; sourceTree = "<group>"; };
 		6F1DD0AE1A8D862D00838476 /* ListeningPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListeningPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F1DD0B21A8D862D00838476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F1DD0B31A8D862D00838476 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -72,40 +70,42 @@
 		6F1DD0C71A8D862D00838476 /* ListeningPracticeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ListeningPracticeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F1DD0CC1A8D862D00838476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F1DD0CD1A8D862D00838476 /* ListeningPracticeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListeningPracticeTests.m; sourceTree = "<group>"; };
-		6F1DD0D91A8D8A5000838476 /* OpenALSupport.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = OpenALSupport.c; sourceTree = "<group>"; };
-		6F1DD0DA1A8D8A5000838476 /* OpenALSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenALSupport.h; sourceTree = "<group>"; };
-		6F1DD0DB1A8D8A5000838476 /* SoundBankPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundBankPlayer.h; sourceTree = "<group>"; };
-		6F1DD0DC1A8D8A5000838476 /* SoundBankPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundBankPlayer.m; sourceTree = "<group>"; };
-		6F1DD0E01A8D8C2F00838476 /* P200 Piano A#2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano A#2.caf"; sourceTree = "<group>"; };
-		6F1DD0E11A8D8C2F00838476 /* P200 Piano A#3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano A#3.caf"; sourceTree = "<group>"; };
-		6F1DD0E21A8D8C2F00838476 /* P200 Piano A#4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano A#4.caf"; sourceTree = "<group>"; };
-		6F1DD0E31A8D8C2F00838476 /* P200 Piano A#5.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano A#5.caf"; sourceTree = "<group>"; };
-		6F1DD0E41A8D8C2F00838476 /* P200 Piano A#7.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano A#7.caf"; sourceTree = "<group>"; };
-		6F1DD0E51A8D8C2F00838476 /* P200 Piano C10.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano C10.caf"; sourceTree = "<group>"; };
-		6F1DD0E61A8D8C2F00838476 /* P200 Piano C7.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano C7.caf"; sourceTree = "<group>"; };
-		6F1DD0E71A8D8C2F00838476 /* P200 Piano D#8.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano D#8.caf"; sourceTree = "<group>"; };
-		6F1DD0E81A8D8C2F00838476 /* P200 Piano D2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano D2.caf"; sourceTree = "<group>"; };
-		6F1DD0E91A8D8C2F00838476 /* P200 Piano D3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano D3.caf"; sourceTree = "<group>"; };
-		6F1DD0EA1A8D8C2F00838476 /* P200 Piano D4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano D4.caf"; sourceTree = "<group>"; };
-		6F1DD0EB1A8D8C2F00838476 /* P200 Piano D5.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano D5.caf"; sourceTree = "<group>"; };
-		6F1DD0EC1A8D8C2F00838476 /* P200 Piano D6.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano D6.caf"; sourceTree = "<group>"; };
-		6F1DD0ED1A8D8C2F00838476 /* P200 Piano F#2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano F#2.caf"; sourceTree = "<group>"; };
-		6F1DD0EE1A8D8C2F00838476 /* P200 Piano F#3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano F#3.caf"; sourceTree = "<group>"; };
-		6F1DD0EF1A8D8C2F00838476 /* P200 Piano F#4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano F#4.caf"; sourceTree = "<group>"; };
-		6F1DD0F01A8D8C2F00838476 /* P200 Piano F#5.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano F#5.caf"; sourceTree = "<group>"; };
-		6F1DD0F11A8D8C2F00838476 /* P200 Piano F#6.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano F#6.caf"; sourceTree = "<group>"; };
-		6F1DD0F21A8D8C2F00838476 /* P200 Piano F#7.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano F#7.caf"; sourceTree = "<group>"; };
-		6F1DD0F31A8D8C2F00838476 /* P200 Piano G#9.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano G#9.caf"; sourceTree = "<group>"; };
-		6F1DD0F41A8D8C2F00838476 /* Piano.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Piano.plist; sourceTree = "<group>"; };
 		6F45F73E1A943CDB007E8287 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
-		6F853FB01A95AD3B00BB1FC7 /* AudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioController.h; path = ListeningPractice/AudioController.h; sourceTree = "<group>"; };
-		6F853FB11A95AD3B00BB1FC7 /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioController.m; path = ListeningPractice/AudioController.m; sourceTree = "<group>"; };
-		6F853FB21A95AD3B00BB1FC7 /* PitchDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PitchDetector.h; path = ListeningPractice/PitchDetector.h; sourceTree = "<group>"; };
-		6F853FB31A95AD3B00BB1FC7 /* PitchDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PitchDetector.m; path = ListeningPractice/PitchDetector.m; sourceTree = "<group>"; };
-		6F853FB41A95AD3B00BB1FC7 /* TPCircularBuffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = TPCircularBuffer.c; path = ListeningPractice/TPCircularBuffer.c; sourceTree = "<group>"; };
-		6F853FB51A95AD3B00BB1FC7 /* TPCircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPCircularBuffer.h; path = ListeningPractice/TPCircularBuffer.h; sourceTree = "<group>"; };
-		6F853FB91A95BDD600BB1FC7 /* correct.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = correct.jpeg; path = ListeningPractice/Resources/correct.jpeg; sourceTree = "<group>"; };
-		6F853FBA1A95BDD600BB1FC7 /* wrong.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wrong.jpeg; path = ListeningPractice/Resources/wrong.jpeg; sourceTree = "<group>"; };
+		6F853FBD1A95C1B300BB1FC7 /* AudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioController.h; path = FFT/AudioController.h; sourceTree = "<group>"; };
+		6F853FBE1A95C1B300BB1FC7 /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioController.m; path = FFT/AudioController.m; sourceTree = "<group>"; };
+		6F853FBF1A95C1B300BB1FC7 /* PitchDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PitchDetector.h; path = FFT/PitchDetector.h; sourceTree = "<group>"; };
+		6F853FC01A95C1B300BB1FC7 /* PitchDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PitchDetector.m; path = FFT/PitchDetector.m; sourceTree = "<group>"; };
+		6F853FC11A95C1B300BB1FC7 /* TPCircularBuffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = TPCircularBuffer.c; path = FFT/TPCircularBuffer.c; sourceTree = "<group>"; };
+		6F853FC21A95C1B300BB1FC7 /* TPCircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPCircularBuffer.h; path = FFT/TPCircularBuffer.h; sourceTree = "<group>"; };
+		6F853FCB1A95C1F400BB1FC7 /* OpenALSupport.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = OpenALSupport.c; sourceTree = "<group>"; };
+		6F853FCC1A95C1F400BB1FC7 /* OpenALSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenALSupport.h; sourceTree = "<group>"; };
+		6F853FCD1A95C1F400BB1FC7 /* SoundBankPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundBankPlayer.h; sourceTree = "<group>"; };
+		6F853FCE1A95C1F400BB1FC7 /* SoundBankPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundBankPlayer.m; sourceTree = "<group>"; };
+		6F853FD21A95C20A00BB1FC7 /* P200 Piano A#2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano A#2.caf"; sourceTree = "<group>"; };
+		6F853FD31A95C20A00BB1FC7 /* P200 Piano A#3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano A#3.caf"; sourceTree = "<group>"; };
+		6F853FD41A95C20A00BB1FC7 /* P200 Piano A#4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano A#4.caf"; sourceTree = "<group>"; };
+		6F853FD51A95C20A00BB1FC7 /* P200 Piano A#5.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano A#5.caf"; sourceTree = "<group>"; };
+		6F853FD61A95C20A00BB1FC7 /* P200 Piano A#7.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano A#7.caf"; sourceTree = "<group>"; };
+		6F853FD71A95C20A00BB1FC7 /* P200 Piano C10.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano C10.caf"; sourceTree = "<group>"; };
+		6F853FD81A95C20A00BB1FC7 /* P200 Piano C7.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano C7.caf"; sourceTree = "<group>"; };
+		6F853FD91A95C20A00BB1FC7 /* P200 Piano D#8.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano D#8.caf"; sourceTree = "<group>"; };
+		6F853FDA1A95C20A00BB1FC7 /* P200 Piano D2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano D2.caf"; sourceTree = "<group>"; };
+		6F853FDB1A95C20A00BB1FC7 /* P200 Piano D3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano D3.caf"; sourceTree = "<group>"; };
+		6F853FDC1A95C20A00BB1FC7 /* P200 Piano D4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano D4.caf"; sourceTree = "<group>"; };
+		6F853FDD1A95C20A00BB1FC7 /* P200 Piano D5.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano D5.caf"; sourceTree = "<group>"; };
+		6F853FDE1A95C20A00BB1FC7 /* P200 Piano D6.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano D6.caf"; sourceTree = "<group>"; };
+		6F853FDF1A95C20A00BB1FC7 /* P200 Piano F#2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano F#2.caf"; sourceTree = "<group>"; };
+		6F853FE01A95C20A00BB1FC7 /* P200 Piano F#3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano F#3.caf"; sourceTree = "<group>"; };
+		6F853FE11A95C20A00BB1FC7 /* P200 Piano F#4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano F#4.caf"; sourceTree = "<group>"; };
+		6F853FE21A95C20A00BB1FC7 /* P200 Piano F#5.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano F#5.caf"; sourceTree = "<group>"; };
+		6F853FE31A95C20A00BB1FC7 /* P200 Piano F#6.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano F#6.caf"; sourceTree = "<group>"; };
+		6F853FE41A95C20A00BB1FC7 /* P200 Piano F#7.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano F#7.caf"; sourceTree = "<group>"; };
+		6F853FE51A95C20A00BB1FC7 /* P200 Piano G#9.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano G#9.caf"; sourceTree = "<group>"; };
+		6F853FE61A95C20A00BB1FC7 /* Piano.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Piano.plist; sourceTree = "<group>"; };
+		6F853FFD1A95C2A500BB1FC7 /* correct.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = correct.jpeg; sourceTree = "<group>"; };
+		6F853FFE1A95C2A500BB1FC7 /* ebony_keyup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ebony_keyup.png; sourceTree = "<group>"; };
+		6F853FFF1A95C2A500BB1FC7 /* ivory_keyup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ivory_keyup.png; sourceTree = "<group>"; };
+		6F8540001A95C2A500BB1FC7 /* wrong.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wrong.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,25 +126,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6F0286FF1A8DB6F300BA12E4 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				6F853FB91A95BDD600BB1FC7 /* correct.jpeg */,
-				6F853FBA1A95BDD600BB1FC7 /* wrong.jpeg */,
-				6F0287021A8DB78B00BA12E4 /* keyBackground01.png */,
-				6F0287001A8DB76900BA12E4 /* keyBackground02.png */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		6F1DD0A51A8D862D00838476 = {
 			isa = PBXGroup;
 			children = (
+				6F8540051A95C2AB00BB1FC7 /* Frameworks */,
+				6F853FFC1A95C2A500BB1FC7 /* Resources */,
+				6F853FD11A95C20A00BB1FC7 /* Sounds */,
+				6F853FCA1A95C1F400BB1FC7 /* SoundBankPlayer */,
 				6F853FAF1A95ABF500BB1FC7 /* FFT */,
-				6F45F73E1A943CDB007E8287 /* CoreAudio.framework */,
-				6F0286FF1A8DB6F300BA12E4 /* Resources */,
-				6F1DD0DF1A8D8C2F00838476 /* Sounds */,
-				6F1DD0D81A8D8A5000838476 /* SoundBankPlayer */,
 				6F1DD0B01A8D862D00838476 /* ListeningPractice */,
 				6F1DD0CA1A8D862D00838476 /* ListeningPracticeTests */,
 				6F1DD0AF1A8D862D00838476 /* Products */,
@@ -201,58 +190,75 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6F1DD0D81A8D8A5000838476 /* SoundBankPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				6F1DD0D91A8D8A5000838476 /* OpenALSupport.c */,
-				6F1DD0DA1A8D8A5000838476 /* OpenALSupport.h */,
-				6F1DD0DB1A8D8A5000838476 /* SoundBankPlayer.h */,
-				6F1DD0DC1A8D8A5000838476 /* SoundBankPlayer.m */,
-			);
-			name = SoundBankPlayer;
-			path = "../../../SoundBankPlayer-master/SoundBankPlayer";
-			sourceTree = "<group>";
-		};
-		6F1DD0DF1A8D8C2F00838476 /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-				6F1DD0E01A8D8C2F00838476 /* P200 Piano A#2.caf */,
-				6F1DD0E11A8D8C2F00838476 /* P200 Piano A#3.caf */,
-				6F1DD0E21A8D8C2F00838476 /* P200 Piano A#4.caf */,
-				6F1DD0E31A8D8C2F00838476 /* P200 Piano A#5.caf */,
-				6F1DD0E41A8D8C2F00838476 /* P200 Piano A#7.caf */,
-				6F1DD0E51A8D8C2F00838476 /* P200 Piano C10.caf */,
-				6F1DD0E61A8D8C2F00838476 /* P200 Piano C7.caf */,
-				6F1DD0E71A8D8C2F00838476 /* P200 Piano D#8.caf */,
-				6F1DD0E81A8D8C2F00838476 /* P200 Piano D2.caf */,
-				6F1DD0E91A8D8C2F00838476 /* P200 Piano D3.caf */,
-				6F1DD0EA1A8D8C2F00838476 /* P200 Piano D4.caf */,
-				6F1DD0EB1A8D8C2F00838476 /* P200 Piano D5.caf */,
-				6F1DD0EC1A8D8C2F00838476 /* P200 Piano D6.caf */,
-				6F1DD0ED1A8D8C2F00838476 /* P200 Piano F#2.caf */,
-				6F1DD0EE1A8D8C2F00838476 /* P200 Piano F#3.caf */,
-				6F1DD0EF1A8D8C2F00838476 /* P200 Piano F#4.caf */,
-				6F1DD0F01A8D8C2F00838476 /* P200 Piano F#5.caf */,
-				6F1DD0F11A8D8C2F00838476 /* P200 Piano F#6.caf */,
-				6F1DD0F21A8D8C2F00838476 /* P200 Piano F#7.caf */,
-				6F1DD0F31A8D8C2F00838476 /* P200 Piano G#9.caf */,
-				6F1DD0F41A8D8C2F00838476 /* Piano.plist */,
-			);
-			name = Sounds;
-			path = "../../../SoundBankPlayer-master/Sounds";
-			sourceTree = "<group>";
-		};
 		6F853FAF1A95ABF500BB1FC7 /* FFT */ = {
 			isa = PBXGroup;
 			children = (
-				6F853FB01A95AD3B00BB1FC7 /* AudioController.h */,
-				6F853FB11A95AD3B00BB1FC7 /* AudioController.m */,
-				6F853FB21A95AD3B00BB1FC7 /* PitchDetector.h */,
-				6F853FB31A95AD3B00BB1FC7 /* PitchDetector.m */,
-				6F853FB41A95AD3B00BB1FC7 /* TPCircularBuffer.c */,
-				6F853FB51A95AD3B00BB1FC7 /* TPCircularBuffer.h */,
+				6F853FBD1A95C1B300BB1FC7 /* AudioController.h */,
+				6F853FBE1A95C1B300BB1FC7 /* AudioController.m */,
+				6F853FBF1A95C1B300BB1FC7 /* PitchDetector.h */,
+				6F853FC01A95C1B300BB1FC7 /* PitchDetector.m */,
+				6F853FC11A95C1B300BB1FC7 /* TPCircularBuffer.c */,
+				6F853FC21A95C1B300BB1FC7 /* TPCircularBuffer.h */,
 			);
 			name = FFT;
+			sourceTree = "<group>";
+		};
+		6F853FCA1A95C1F400BB1FC7 /* SoundBankPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				6F853FCB1A95C1F400BB1FC7 /* OpenALSupport.c */,
+				6F853FCC1A95C1F400BB1FC7 /* OpenALSupport.h */,
+				6F853FCD1A95C1F400BB1FC7 /* SoundBankPlayer.h */,
+				6F853FCE1A95C1F400BB1FC7 /* SoundBankPlayer.m */,
+			);
+			path = SoundBankPlayer;
+			sourceTree = "<group>";
+		};
+		6F853FD11A95C20A00BB1FC7 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				6F853FD21A95C20A00BB1FC7 /* P200 Piano A#2.caf */,
+				6F853FD31A95C20A00BB1FC7 /* P200 Piano A#3.caf */,
+				6F853FD41A95C20A00BB1FC7 /* P200 Piano A#4.caf */,
+				6F853FD51A95C20A00BB1FC7 /* P200 Piano A#5.caf */,
+				6F853FD61A95C20A00BB1FC7 /* P200 Piano A#7.caf */,
+				6F853FD71A95C20A00BB1FC7 /* P200 Piano C10.caf */,
+				6F853FD81A95C20A00BB1FC7 /* P200 Piano C7.caf */,
+				6F853FD91A95C20A00BB1FC7 /* P200 Piano D#8.caf */,
+				6F853FDA1A95C20A00BB1FC7 /* P200 Piano D2.caf */,
+				6F853FDB1A95C20A00BB1FC7 /* P200 Piano D3.caf */,
+				6F853FDC1A95C20A00BB1FC7 /* P200 Piano D4.caf */,
+				6F853FDD1A95C20A00BB1FC7 /* P200 Piano D5.caf */,
+				6F853FDE1A95C20A00BB1FC7 /* P200 Piano D6.caf */,
+				6F853FDF1A95C20A00BB1FC7 /* P200 Piano F#2.caf */,
+				6F853FE01A95C20A00BB1FC7 /* P200 Piano F#3.caf */,
+				6F853FE11A95C20A00BB1FC7 /* P200 Piano F#4.caf */,
+				6F853FE21A95C20A00BB1FC7 /* P200 Piano F#5.caf */,
+				6F853FE31A95C20A00BB1FC7 /* P200 Piano F#6.caf */,
+				6F853FE41A95C20A00BB1FC7 /* P200 Piano F#7.caf */,
+				6F853FE51A95C20A00BB1FC7 /* P200 Piano G#9.caf */,
+				6F853FE61A95C20A00BB1FC7 /* Piano.plist */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		6F853FFC1A95C2A500BB1FC7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6F853FFD1A95C2A500BB1FC7 /* correct.jpeg */,
+				6F853FFE1A95C2A500BB1FC7 /* ebony_keyup.png */,
+				6F853FFF1A95C2A500BB1FC7 /* ivory_keyup.png */,
+				6F8540001A95C2A500BB1FC7 /* wrong.jpeg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6F8540051A95C2AB00BB1FC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F45F73E1A943CDB007E8287 /* CoreAudio.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,34 +341,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F1DD0FD1A8D8C2F00838476 /* P200 Piano D2.caf in Resources */,
-				6F1DD0FE1A8D8C2F00838476 /* P200 Piano D3.caf in Resources */,
-				6F853FBB1A95BDD600BB1FC7 /* correct.jpeg in Resources */,
-				6F1DD0F61A8D8C2F00838476 /* P200 Piano A#3.caf in Resources */,
-				6F1DD1001A8D8C2F00838476 /* P200 Piano D5.caf in Resources */,
-				6F1DD0FC1A8D8C2F00838476 /* P200 Piano D#8.caf in Resources */,
-				6F1DD1051A8D8C2F00838476 /* P200 Piano F#5.caf in Resources */,
+				6F853FE71A95C20A00BB1FC7 /* P200 Piano A#2.caf in Resources */,
+				6F853FF61A95C20A00BB1FC7 /* P200 Piano F#4.caf in Resources */,
+				6F853FF91A95C20A00BB1FC7 /* P200 Piano F#7.caf in Resources */,
+				6F853FED1A95C20A00BB1FC7 /* P200 Piano C7.caf in Resources */,
 				6F1DD0BD1A8D862D00838476 /* Main.storyboard in Resources */,
-				6F1DD0F51A8D8C2F00838476 /* P200 Piano A#2.caf in Resources */,
-				6F1DD1031A8D8C2F00838476 /* P200 Piano F#3.caf in Resources */,
-				6F1DD1021A8D8C2F00838476 /* P200 Piano F#2.caf in Resources */,
-				6F1DD0FF1A8D8C2F00838476 /* P200 Piano D4.caf in Resources */,
-				6F1DD0FA1A8D8C2F00838476 /* P200 Piano C10.caf in Resources */,
-				6F1DD0FB1A8D8C2F00838476 /* P200 Piano C7.caf in Resources */,
-				6F1DD1081A8D8C2F00838476 /* P200 Piano G#9.caf in Resources */,
-				6F1DD1061A8D8C2F00838476 /* P200 Piano F#6.caf in Resources */,
-				6F0287011A8DB76900BA12E4 /* keyBackground02.png in Resources */,
-				6F0287031A8DB78B00BA12E4 /* keyBackground01.png in Resources */,
-				6F1DD0F71A8D8C2F00838476 /* P200 Piano A#4.caf in Resources */,
-				6F1DD1071A8D8C2F00838476 /* P200 Piano F#7.caf in Resources */,
+				6F853FEC1A95C20A00BB1FC7 /* P200 Piano C10.caf in Resources */,
+				6F853FEE1A95C20A00BB1FC7 /* P200 Piano D#8.caf in Resources */,
+				6F853FF11A95C20A00BB1FC7 /* P200 Piano D4.caf in Resources */,
+				6F853FEA1A95C20A00BB1FC7 /* P200 Piano A#5.caf in Resources */,
+				6F853FEF1A95C20A00BB1FC7 /* P200 Piano D2.caf in Resources */,
+				6F853FF51A95C20A00BB1FC7 /* P200 Piano F#3.caf in Resources */,
+				6F853FF41A95C20A00BB1FC7 /* P200 Piano F#2.caf in Resources */,
+				6F853FEB1A95C20A00BB1FC7 /* P200 Piano A#7.caf in Resources */,
+				6F853FFB1A95C20A00BB1FC7 /* Piano.plist in Resources */,
+				6F853FF81A95C20A00BB1FC7 /* P200 Piano F#6.caf in Resources */,
+				6F853FE91A95C20A00BB1FC7 /* P200 Piano A#4.caf in Resources */,
+				6F853FF01A95C20A00BB1FC7 /* P200 Piano D3.caf in Resources */,
+				6F853FFA1A95C20A00BB1FC7 /* P200 Piano G#9.caf in Resources */,
+				6F8540031A95C2A500BB1FC7 /* ivory_keyup.png in Resources */,
+				6F853FF71A95C20A00BB1FC7 /* P200 Piano F#5.caf in Resources */,
+				6F8540011A95C2A500BB1FC7 /* correct.jpeg in Resources */,
+				6F8540021A95C2A500BB1FC7 /* ebony_keyup.png in Resources */,
 				6F1DD0C21A8D862D00838476 /* LaunchScreen.xib in Resources */,
-				6F1DD1041A8D8C2F00838476 /* P200 Piano F#4.caf in Resources */,
-				6F1DD1011A8D8C2F00838476 /* P200 Piano D6.caf in Resources */,
-				6F1DD1091A8D8C2F00838476 /* Piano.plist in Resources */,
-				6F1DD0F81A8D8C2F00838476 /* P200 Piano A#5.caf in Resources */,
-				6F1DD0F91A8D8C2F00838476 /* P200 Piano A#7.caf in Resources */,
 				6F1DD0BF1A8D862D00838476 /* Images.xcassets in Resources */,
-				6F853FBC1A95BDD600BB1FC7 /* wrong.jpeg in Resources */,
+				6F853FF31A95C20A00BB1FC7 /* P200 Piano D6.caf in Resources */,
+				6F853FE81A95C20A00BB1FC7 /* P200 Piano A#3.caf in Resources */,
+				6F853FF21A95C20A00BB1FC7 /* P200 Piano D5.caf in Resources */,
+				6F8540041A95C2A500BB1FC7 /* wrong.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,14 +386,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F853FB61A95AD3B00BB1FC7 /* AudioController.m in Sources */,
-				6F1DD0DD1A8D8A5000838476 /* OpenALSupport.c in Sources */,
+				6F853FC31A95C1B300BB1FC7 /* AudioController.m in Sources */,
 				6F1DD0BA1A8D862D00838476 /* ListenerViewController.m in Sources */,
 				6F1DD0B71A8D862D00838476 /* AppDelegate.m in Sources */,
+				6F853FCF1A95C1F400BB1FC7 /* OpenALSupport.c in Sources */,
 				6F1DD0B41A8D862D00838476 /* main.m in Sources */,
-				6F853FB71A95AD3B00BB1FC7 /* PitchDetector.m in Sources */,
-				6F853FB81A95AD3B00BB1FC7 /* TPCircularBuffer.c in Sources */,
-				6F1DD0DE1A8D8A5000838476 /* SoundBankPlayer.m in Sources */,
+				6F853FC41A95C1B300BB1FC7 /* PitchDetector.m in Sources */,
+				6F853FD01A95C1F400BB1FC7 /* SoundBankPlayer.m in Sources */,
+				6F853FC51A95C1B300BB1FC7 /* TPCircularBuffer.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
