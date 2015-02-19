@@ -7,12 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AudioController.h"
+#import "PitchDetector.h"
 
-@interface ListenerViewController : UIViewController
+@interface ListenerViewController : UIViewController <PitchDetectorDelegate, AudioControllerDelegate>
+{
+    AudioController *audioManager;
+    PitchDetector *autoCorrelator;
+    NSMutableArray *medianPitchFollow;
+}
+
+@property (weak, nonatomic) IBOutlet UILabel *freqLabel;
+
 
 - (IBAction)Play:(id)sender;
-
-
 - (IBAction)C:(id)sender;
 - (IBAction)Cplus:(id)sender;
 - (IBAction)D:(id)sender;

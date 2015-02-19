@@ -30,6 +30,13 @@
 
 -(void)load
 {
+    
+    audioManager = [AudioController sharedAudioManager];
+    audioManager.delegate = self;
+    autoCorrelator = [[PitchDetector alloc] initWithSampleRate:audioManager.audioFormat.mSampleRate lowBoundFreq:30 hiBoundFreq:4500 andDelegate:self];
+    
+    medianPitchFollow = [[NSMutableArray alloc] initWithCapacity:22];
+
     _playingArpeggio = NO;
     
     // Create the player and tell it which sound bank to use.
@@ -107,6 +114,57 @@
     [self load];
     // Do any additional setup after loading the view, typically from a nib.
 }
+
+- (void) updatedPitch:(float)frequency {
+    
+    double value = frequency;
+    //value = [self median:value];
+    self.freqLabel.text = [NSString stringWithFormat:@"%3.1f Hz & Note:%d", value, [self closestCharForFrequency:value]];
+    
+}
+
+- (int)closestCharForFrequency:(float)frequency {
+    int n = (12 * log2f(frequency / 440) + 0.5) + 49; //round
+    return n;
+}
+
+- (double) median: (double) value {
+    
+    NSNumber *nsnum = [NSNumber numberWithDouble:value];
+    [medianPitchFollow insertObject:nsnum atIndex:0];
+    
+    if(medianPitchFollow.count>22) {
+        [medianPitchFollow removeObjectAtIndex:medianPitchFollow.count-1];
+    }
+    
+    double median = 0;
+    
+    if(medianPitchFollow.count>=2) {
+        NSSortDescriptor *highestToLowest = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:NO];
+        NSMutableArray *tempSort = [NSMutableArray arrayWithArray:medianPitchFollow];
+        [tempSort sortUsingDescriptors:[NSArray arrayWithObject:highestToLowest]];
+        
+        if(tempSort.count%2==0) {
+            double first = 0, second = 0;
+            first = [[tempSort objectAtIndex:tempSort.count/2-1] doubleValue];
+            second = [[tempSort objectAtIndex:tempSort.count/2] doubleValue];
+            median = (first+second)/2;
+            value = median;
+        } else {
+            median = [[tempSort objectAtIndex:tempSort.count/2] doubleValue];
+            value = median;
+        }
+        
+        [tempSort removeAllObjects];
+        tempSort = nil;
+    }
+    return value;
+}
+
+- (void) receivedAudioSamples:(SInt16 *)samples length:(int)len {
+    [autoCorrelator addSamples:samples inNumberFrames:len];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
