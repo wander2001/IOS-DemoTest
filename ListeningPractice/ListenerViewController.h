@@ -18,9 +18,15 @@
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *freqLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *result;
 
 
-- (IBAction)Play:(id)sender;
+
+- (IBAction)play:(id)sender;
+- (IBAction)add:(id)sender;
+- (IBAction)verify:(id)sender;
+
+#pragma mark keyboard
 - (IBAction)C:(id)sender;
 - (IBAction)Cplus:(id)sender;
 - (IBAction)D:(id)sender;

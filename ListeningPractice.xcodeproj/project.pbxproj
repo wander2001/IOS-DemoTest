@@ -42,6 +42,8 @@
 		6F853FB61A95AD3B00BB1FC7 /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F853FB11A95AD3B00BB1FC7 /* AudioController.m */; };
 		6F853FB71A95AD3B00BB1FC7 /* PitchDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F853FB31A95AD3B00BB1FC7 /* PitchDetector.m */; };
 		6F853FB81A95AD3B00BB1FC7 /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F853FB41A95AD3B00BB1FC7 /* TPCircularBuffer.c */; };
+		6F853FBB1A95BDD600BB1FC7 /* correct.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FB91A95BDD600BB1FC7 /* correct.jpeg */; };
+		6F853FBC1A95BDD600BB1FC7 /* wrong.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FBA1A95BDD600BB1FC7 /* wrong.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,8 @@
 		6F853FB31A95AD3B00BB1FC7 /* PitchDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PitchDetector.m; path = ListeningPractice/PitchDetector.m; sourceTree = "<group>"; };
 		6F853FB41A95AD3B00BB1FC7 /* TPCircularBuffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = TPCircularBuffer.c; path = ListeningPractice/TPCircularBuffer.c; sourceTree = "<group>"; };
 		6F853FB51A95AD3B00BB1FC7 /* TPCircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPCircularBuffer.h; path = ListeningPractice/TPCircularBuffer.h; sourceTree = "<group>"; };
+		6F853FB91A95BDD600BB1FC7 /* correct.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = correct.jpeg; path = ListeningPractice/Resources/correct.jpeg; sourceTree = "<group>"; };
+		6F853FBA1A95BDD600BB1FC7 /* wrong.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wrong.jpeg; path = ListeningPractice/Resources/wrong.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,8 @@
 		6F0286FF1A8DB6F300BA12E4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6F853FB91A95BDD600BB1FC7 /* correct.jpeg */,
+				6F853FBA1A95BDD600BB1FC7 /* wrong.jpeg */,
 				6F0287021A8DB78B00BA12E4 /* keyBackground01.png */,
 				6F0287001A8DB76900BA12E4 /* keyBackground02.png */,
 			);
@@ -331,6 +337,7 @@
 			files = (
 				6F1DD0FD1A8D8C2F00838476 /* P200 Piano D2.caf in Resources */,
 				6F1DD0FE1A8D8C2F00838476 /* P200 Piano D3.caf in Resources */,
+				6F853FBB1A95BDD600BB1FC7 /* correct.jpeg in Resources */,
 				6F1DD0F61A8D8C2F00838476 /* P200 Piano A#3.caf in Resources */,
 				6F1DD1001A8D8C2F00838476 /* P200 Piano D5.caf in Resources */,
 				6F1DD0FC1A8D8C2F00838476 /* P200 Piano D#8.caf in Resources */,
@@ -355,6 +362,7 @@
 				6F1DD0F81A8D8C2F00838476 /* P200 Piano A#5.caf in Resources */,
 				6F1DD0F91A8D8C2F00838476 /* P200 Piano A#7.caf in Resources */,
 				6F1DD0BF1A8D862D00838476 /* Images.xcassets in Resources */,
+				6F853FBC1A95BDD600BB1FC7 /* wrong.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

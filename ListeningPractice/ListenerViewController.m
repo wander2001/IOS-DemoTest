@@ -10,6 +10,8 @@
 #import "SoundBankPlayer.h"
 #import "ListenerViewController.h"
 
+#define OFFSET 20;
+
 @interface ListenerViewController ()
 
 @end
@@ -25,7 +27,16 @@
     NSUInteger _arpeggioIndex;
     CFTimeInterval _arpeggioStartTime;
     CFTimeInterval _arpeggioDelay;
-    NSMutableIndexSet *_selectedNote;
+    NSMutableSet *_selectedNotes;
+    NSMutableSet *_questionNotes;
+    NSNumber *currentNode;
+}
+
+- (void) generateQuestion
+{
+    [_questionNotes addObject: @60];
+    [_questionNotes addObject: @64];
+    [_questionNotes addObject: @67];
 }
 
 -(void)load
@@ -40,7 +51,11 @@
     _playingArpeggio = NO;
     
     // Create the player and tell it which sound bank to use.
-    _selectedNote = [[NSMutableIndexSet alloc] init];
+    _selectedNotes = [[NSMutableSet alloc] init];
+    _questionNotes = [[NSMutableSet alloc] init];
+    
+    [self generateQuestion];
+    
     _soundBankPlayer = [[SoundBankPlayer alloc] init];
     [_soundBankPlayer setSoundBank:@"Piano"];
     
@@ -119,7 +134,9 @@
     
     double value = frequency;
     //value = [self median:value];
-    self.freqLabel.text = [NSString stringWithFormat:@"%3.1f Hz & Note:%d", value, [self closestCharForFrequency:value]];
+    int noteNum = [self closestCharForFrequency:value] + OFFSET;
+    currentNode = [NSNumber numberWithInt:noteNum];
+    self.freqLabel.text = [NSString stringWithFormat:@"%3.1f Hz & Note:%d", value, noteNum];
     
 }
 
@@ -171,11 +188,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)Play:(id)sender {
-    [_soundBankPlayer queueNote:60 gain:0.4f];
-    [_soundBankPlayer queueNote:64 gain:0.4f];
-    [_soundBankPlayer queueNote:67 gain:0.4f];
+- (IBAction)play:(id)sender {
+    for (NSNumber *questionNote in _questionNotes) {
+        [_soundBankPlayer queueNote:[questionNote intValue] gain:0.4f];
+    }
     [_soundBankPlayer playQueuedNotes];
+}
+
+- (IBAction)add:(id)sender {
+    [_selectedNotes addObject:currentNode];
+}
+
+- (IBAction)verify:(id)sender {
+    if ([_questionNotes isEqual: _selectedNotes]) {
+        self.result.image = [UIImage imageNamed:@"correct.jpeg"];
+    } else {
+        self.result.image = [UIImage imageNamed:@"wrong.jpeg"];
+    }
 }
 
 - (IBAction)C:(id)sender {
