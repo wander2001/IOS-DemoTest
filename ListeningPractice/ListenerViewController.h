@@ -10,7 +10,7 @@
 #import "AudioController.h"
 #import "PitchDetector.h"
 
-@interface ListenerViewController : UIViewController <PitchDetectorDelegate, AudioControllerDelegate>
+@interface ListenerViewController : UIViewController <PitchDetectorDelegate, AudioControllerDelegate, UITableViewDataSource,UITableViewDelegate>
 {
     AudioController *audioManager;
     PitchDetector *autoCorrelator;
@@ -19,6 +19,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *freqLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *result;
+@property (weak, nonatomic) IBOutlet UITableView *table;
+@property (nonatomic,retain) NSMutableArray *tableData;
 
 
 

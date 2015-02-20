@@ -32,6 +32,8 @@
     NSNumber *currentNode;
 }
 
+@synthesize tableData,table;
+
 - (void) generateQuestion
 {
     [_questionNotes addObject: @60];
@@ -58,6 +60,9 @@
     
     _soundBankPlayer = [[SoundBankPlayer alloc] init];
     [_soundBankPlayer setSoundBank:@"Piano"];
+    
+    tableData = [[NSMutableArray alloc] init];
+
     
     // We use a timer to play arpeggios.
     [self startTimer];
@@ -197,6 +202,8 @@
 
 - (IBAction)add:(id)sender {
     [_selectedNotes addObject:currentNode];
+    [tableData addObject: [currentNode stringValue]];
+    [table reloadData];
 }
 
 - (IBAction)verify:(id)sender {
@@ -272,7 +279,52 @@
     [_soundBankPlayer playQueuedNotes];
 }
 
+#pragma - markup TableView Delegate Methods
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+
+{
+    
+    return [tableData count];
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+
+{
+    
+    static NSString *simpleTableIdentifier = @"SimpleTableItem";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        
+    }
+    
+    cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    
+    return cell;
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+
+{
+    NSNumber *item = [NSNumber numberWithInteger:[self.tableData[indexPath.row] integerValue]];
+    [_selectedNotes removeObject:item];
+    [self.tableData removeObjectAtIndex:indexPath.row];
+    
+    [table reloadData];
+    
+}
 
 
 @end
