@@ -10,7 +10,9 @@
 #import "AudioController.h"
 #import "PitchDetector.h"
 
-@interface ListenerViewController : UIViewController <PitchDetectorDelegate, AudioControllerDelegate, UITableViewDataSource,UITableViewDelegate>
+@interface ListenerViewController : UIViewController <
+    PitchDetectorDelegate, AudioControllerDelegate,
+    UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 {
     AudioController *audioManager;
     PitchDetector *autoCorrelator;
