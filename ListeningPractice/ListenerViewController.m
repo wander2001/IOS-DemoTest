@@ -43,7 +43,7 @@
 
 -(void)load
 {
-    
+    currentNode = @0;
     audioManager = [AudioController sharedAudioManager];
     audioManager.delegate = self;
     autoCorrelator = [[PitchDetector alloc] initWithSampleRate:audioManager.audioFormat.mSampleRate lowBoundFreq:30 hiBoundFreq:4500 andDelegate:self];
@@ -201,9 +201,11 @@
 }
 
 - (IBAction)add:(id)sender {
-    [_selectedNotes addObject:currentNode];
-    [tableData addObject: [currentNode stringValue]];
-    [table reloadData];
+    if (currentNode != nil) {
+        [_selectedNotes addObject:currentNode];
+        [tableData addObject: [currentNode stringValue]];
+        [table reloadData];
+    }
 }
 
 - (IBAction)verify:(id)sender {

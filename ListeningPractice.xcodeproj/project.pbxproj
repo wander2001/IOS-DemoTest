@@ -14,6 +14,11 @@
 		6F1DD0BF1A8D862D00838476 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0BE1A8D862D00838476 /* Images.xcassets */; };
 		6F1DD0C21A8D862D00838476 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0C01A8D862D00838476 /* LaunchScreen.xib */; };
 		6F1DD0CE1A8D862D00838476 /* ListeningPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DD0CD1A8D862D00838476 /* ListeningPracticeTests.m */; };
+		6F6A4E191A9997E700BC2C03 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6A4E181A9997E700BC2C03 /* Accelerate.framework */; };
+		6F6A4E1B1A9997F100BC2C03 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6A4E1A1A9997F100BC2C03 /* AudioToolbox.framework */; };
+		6F6A4E1D1A9997F900BC2C03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6A4E1C1A9997F900BC2C03 /* UIKit.framework */; };
+		6F6A4E1F1A99980900BC2C03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6A4E1E1A99980900BC2C03 /* Foundation.framework */; };
+		6F6A4E211A99982100BC2C03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6A4E201A99982100BC2C03 /* CoreGraphics.framework */; };
 		6F853FC31A95C1B300BB1FC7 /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F853FBE1A95C1B300BB1FC7 /* AudioController.m */; };
 		6F853FC41A95C1B300BB1FC7 /* PitchDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F853FC01A95C1B300BB1FC7 /* PitchDetector.m */; };
 		6F853FC51A95C1B300BB1FC7 /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F853FC11A95C1B300BB1FC7 /* TPCircularBuffer.c */; };
@@ -71,6 +76,11 @@
 		6F1DD0CC1A8D862D00838476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F1DD0CD1A8D862D00838476 /* ListeningPracticeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListeningPracticeTests.m; sourceTree = "<group>"; };
 		6F45F73E1A943CDB007E8287 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		6F6A4E181A9997E700BC2C03 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		6F6A4E1A1A9997F100BC2C03 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		6F6A4E1C1A9997F900BC2C03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6F6A4E1E1A99980900BC2C03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6F6A4E201A99982100BC2C03 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6F853FBD1A95C1B300BB1FC7 /* AudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioController.h; path = FFT/AudioController.h; sourceTree = "<group>"; };
 		6F853FBE1A95C1B300BB1FC7 /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioController.m; path = FFT/AudioController.m; sourceTree = "<group>"; };
 		6F853FBF1A95C1B300BB1FC7 /* PitchDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PitchDetector.h; path = FFT/PitchDetector.h; sourceTree = "<group>"; };
@@ -113,6 +123,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F6A4E211A99982100BC2C03 /* CoreGraphics.framework in Frameworks */,
+				6F6A4E1F1A99980900BC2C03 /* Foundation.framework in Frameworks */,
+				6F6A4E1D1A9997F900BC2C03 /* UIKit.framework in Frameworks */,
+				6F6A4E1B1A9997F100BC2C03 /* AudioToolbox.framework in Frameworks */,
+				6F6A4E191A9997E700BC2C03 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +271,11 @@
 		6F8540051A95C2AB00BB1FC7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6F6A4E201A99982100BC2C03 /* CoreGraphics.framework */,
+				6F6A4E1E1A99980900BC2C03 /* Foundation.framework */,
+				6F6A4E1C1A9997F900BC2C03 /* UIKit.framework */,
+				6F6A4E1A1A9997F100BC2C03 /* AudioToolbox.framework */,
+				6F6A4E181A9997E700BC2C03 /* Accelerate.framework */,
 				6F45F73E1A943CDB007E8287 /* CoreAudio.framework */,
 			);
 			name = Frameworks;
@@ -518,7 +538,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ListeningPractice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -528,7 +550,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ListeningPractice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
