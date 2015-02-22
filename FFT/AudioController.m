@@ -35,7 +35,7 @@
 void checkStatus(OSStatus status);
 void checkStatus(OSStatus status) {
     if(status!=0)
-        printf("Error: %ld\n", status);
+        printf("Error: %ld\n", (long)status);
 }
 
 #pragma mark init
