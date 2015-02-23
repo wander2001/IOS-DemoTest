@@ -8,6 +8,11 @@
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 #import <Foundation/Foundation.h>
+#import <Accelerate/Accelerate.h>
+#import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
+
+#define MAX_FRAMES 4096
 
 @protocol PitchDetectorDelegate <NSObject>
 - (void) updatedPitch: (float) frequency;
@@ -28,6 +33,7 @@
 @property (nonatomic, assign) id<PitchDetectorDelegate> delegate;
 @property int hiBoundFrequency, lowBoundFrequency;
 @property float sampleRate;
+
 
 //Optional Init Method (calls the second init method but sets the frequency bounds to default values)
 -(id) initWithSampleRate: (float) rate andDelegate: (id<PitchDetectorDelegate>) initDelegate; 

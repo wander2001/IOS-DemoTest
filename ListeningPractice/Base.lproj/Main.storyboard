@@ -153,13 +153,13 @@
                                 <rect key="frame" x="290" y="205" width="189" height="202"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="k5a-Lk-nTL" style="IBUITableViewCellStyleDefault" id="Twe-ZL-wU5">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="selectedContent" textLabel="sVK-6j-dCT" style="IBUITableViewCellStyleDefault" id="Twe-ZL-wU5">
                                         <rect key="frame" x="0.0" y="0.0" width="189" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Twe-ZL-wU5" id="kex-Cn-H30">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k5a-Lk-nTL">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sVK-6j-dCT">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -201,6 +201,15 @@
                                     <action selector="verify:" destination="BYZ-38-t0r" eventType="touchDown" id="OGl-us-0An"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFf-p3-Db1">
+                                <rect key="frame" x="496" y="128" width="46" height="30"/>
+                                <state key="normal" title="REC">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="record:" destination="BYZ-38-t0r" eventType="touchDown" id="xum-Do-Mt3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -208,6 +217,7 @@
                     <size key="freeformSize" width="768" height="1024"/>
                     <connections>
                         <outlet property="freqLabel" destination="D7p-Rj-3Jo" id="AoX-Wx-w5I"/>
+                        <outlet property="recordButton" destination="OFf-p3-Db1" id="Wnz-uL-Jbf"/>
                         <outlet property="result" destination="oJf-Y6-cPo" id="Ioy-jL-0YD"/>
                         <outlet property="table" destination="iBa-OD-xqY" id="P3r-DD-KBP"/>
                     </connections>

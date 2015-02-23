@@ -10,6 +10,17 @@
 
 #import <Foundation/Foundation.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import <Foundation/Foundation.h>
+#import <OpenAL/al.h>
+#import <OpenAL/alc.h>
+
+/*
+ * How many OpenAL sources we will use. Each source plays a single buffer, so
+ * this effectively determines the maximum polyphony. There is an upper limit
+ * to the number of simultaneously playing sources that OpenAL supports.
+ * http://stackoverflow.com/questions/2871905/openal-determine-maximum-sources
+ */
+#define NUM_SOURCES 32
 
 @protocol AudioControllerDelegate
 @required
@@ -21,13 +32,22 @@
     @public
     AudioBufferList bufferList;
 }
+
+@property (nonatomic, assign) BOOL loopNotes;
+
 @property (nonatomic, assign) AudioStreamBasicDescription audioFormat;
-@property (nonatomic, assign) AudioUnit rioUnit;
+@property (nonatomic, assign) AudioComponentInstance audioUnit;
 @property (nonatomic, assign) id<AudioControllerDelegate> delegate;
 
 + (AudioController*) sharedAudioManager;
 - (void) startAudio;
-
+- (void) stopAudio;
+- (void)setSoundBank:(NSString *)soundBankName;
+- (void)noteOn:(int)midiNoteNumber gain:(float)gain;
+- (void)queueNote:(int)midiNoteNumber gain:(float)gain;
+- (void)playQueuedNotes;
+- (void)noteOff:(int)midiNoteNumber;
+- (void)allNotesOff;
 
 @end
 

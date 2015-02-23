@@ -19,10 +19,12 @@
     NSMutableArray *medianPitchFollow;
 }
 
+@property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (weak, nonatomic) IBOutlet UILabel *freqLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *result;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property (nonatomic,retain) NSMutableArray *tableData;
+- (IBAction)record:(id)sender;
 
 
 

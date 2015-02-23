@@ -20,7 +20,7 @@
 @implementation ListenerViewController
 
 {
-    SoundBankPlayer *_soundBankPlayer;
+    //SoundBankPlayer *_soundBankPlayer;
     NSTimer *_timer;
     BOOL _playingArpeggio;
     NSArray *_arpeggioNotes;
@@ -30,6 +30,7 @@
     NSMutableSet *_selectedNotes;
     NSMutableSet *_questionNotes;
     NSNumber *currentNode;
+    BOOL isRecording;
 }
 
 @synthesize tableData,table;
@@ -44,7 +45,10 @@
 -(void)load
 {
     currentNode = @0;
+    isRecording = NO;
     audioManager = [AudioController sharedAudioManager];
+    [audioManager setSoundBank:@"Piano"];
+    
     audioManager.delegate = self;
     autoCorrelator = [[PitchDetector alloc] initWithSampleRate:audioManager.audioFormat.mSampleRate lowBoundFreq:30 hiBoundFreq:4500 andDelegate:self];
     
@@ -58,8 +62,8 @@
     
     [self generateQuestion];
     
-    _soundBankPlayer = [[SoundBankPlayer alloc] init];
-    [_soundBankPlayer setSoundBank:@"Piano"];
+    //_soundBankPlayer = [[SoundBankPlayer alloc] init];
+    //[_soundBankPlayer setSoundBank:@"Piano"];
     
     tableData = [[NSMutableArray alloc] init];
 
@@ -113,7 +117,7 @@
         if (now - _arpeggioStartTime >= _arpeggioDelay)
         {
             NSNumber *number = _arpeggioNotes[_arpeggioIndex];
-            [_soundBankPlayer noteOn:[number intValue] gain:0.4f];
+            [audioManager noteOn:[number intValue] gain:0.4f];
             
             _arpeggioIndex += 1;
             if (_arpeggioIndex == [_arpeggioNotes count])
@@ -193,11 +197,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)record:(id)sender {
+    if(!isRecording)
+    {
+        isRecording = YES;
+        [self.recordButton setTitle:@"STOP" forState:UIControlStateNormal];
+        [audioManager startAudio];
+    }
+    else
+    {
+        isRecording = NO;
+        [self.recordButton setTitle:@"REC" forState:UIControlStateNormal];
+        [audioManager stopAudio];
+    }
+
+}
+
 - (IBAction)play:(id)sender {
     for (NSNumber *questionNote in _questionNotes) {
-        [_soundBankPlayer queueNote:[questionNote intValue] gain:0.4f];
+        [audioManager queueNote:[questionNote intValue] gain:0.4f];
     }
-    [_soundBankPlayer playQueuedNotes];
+    [audioManager playQueuedNotes];
 }
 
 - (IBAction)add:(id)sender {
@@ -217,68 +237,68 @@
 }
 
 - (IBAction)C:(id)sender {
-    [_soundBankPlayer queueNote:60 gain:0.4f];
-    [_soundBankPlayer playQueuedNotes];
+    [audioManager queueNote:60 gain:0.4f];
+    [audioManager playQueuedNotes];
 }
 
 - (IBAction)Cplus:(id)sender {
-    [_soundBankPlayer queueNote:61 gain:0.4f];
-    [_soundBankPlayer playQueuedNotes];
+    [audioManager queueNote:61 gain:0.4f];
+    [audioManager playQueuedNotes];
 }
 
 - (IBAction)D:(id)sender {
-    [_soundBankPlayer queueNote:62 gain:0.4f];
-    [_soundBankPlayer playQueuedNotes];
+    [audioManager queueNote:62 gain:0.4f];
+    [audioManager playQueuedNotes];
 }
 
 - (IBAction)Dplus:(id)sender {
-    [_soundBankPlayer queueNote:63 gain:0.4f];
-    [_soundBankPlayer playQueuedNotes];
+    [audioManager queueNote:63 gain:0.4f];
+    [audioManager playQueuedNotes];
 }
 
 - (IBAction)E:(id)sender {
-    [_soundBankPlayer queueNote:64 gain:0.4f];
-    [_soundBankPlayer playQueuedNotes];
+    [audioManager queueNote:64 gain:0.4f];
+    [audioManager playQueuedNotes];
 }
 
 - (IBAction)F:(id)sender {
-    [_soundBankPlayer queueNote:65 gain:0.4f];
-    [_soundBankPlayer playQueuedNotes];
+    [audioManager queueNote:65 gain:0.4f];
+    [audioManager playQueuedNotes];
 }
 
 - (IBAction)Fplus:(id)sender {
-    [_soundBankPlayer queueNote:66 gain:0.4f];
-    [_soundBankPlayer playQueuedNotes];
+    [audioManager queueNote:66 gain:0.4f];
+    [audioManager playQueuedNotes];
 }
 
 - (IBAction)G:(id)sender {
-    [_soundBankPlayer queueNote:67 gain:0.4f];
-    [_soundBankPlayer playQueuedNotes];
+    [audioManager queueNote:67 gain:0.4f];
+    [audioManager playQueuedNotes];
 }
 
 - (IBAction)Gplus:(id)sender {
-    [_soundBankPlayer queueNote:68 gain:0.4f];
-    [_soundBankPlayer playQueuedNotes];
+    [audioManager queueNote:68 gain:0.4f];
+    [audioManager playQueuedNotes];
 }
 
 - (IBAction)A:(id)sender {
-    [_soundBankPlayer queueNote:69 gain:0.4f];
-    [_soundBankPlayer playQueuedNotes];
+    [audioManager queueNote:69 gain:0.4f];
+    [audioManager playQueuedNotes];
 }
 
 - (IBAction)Aplus:(id)sender {
-    [_soundBankPlayer queueNote:70 gain:0.4f];
-    [_soundBankPlayer playQueuedNotes];
+    [audioManager queueNote:70 gain:0.4f];
+    [audioManager playQueuedNotes];
 }
 
 - (IBAction)B:(id)sender {
-    [_soundBankPlayer queueNote:71 gain:0.4f];
-    [_soundBankPlayer playQueuedNotes];
+    [audioManager queueNote:71 gain:0.4f];
+    [audioManager playQueuedNotes];
 }
 
 - (IBAction)C5:(id)sender {
-    [_soundBankPlayer queueNote:72 gain:0.4f];
-    [_soundBankPlayer playQueuedNotes];
+    [audioManager queueNote:72 gain:0.4f];
+    [audioManager playQueuedNotes];
 }
 
 #pragma - markup TableView Delegate Methods

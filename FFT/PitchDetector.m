@@ -10,11 +10,30 @@
 
 
 #import "PitchDetector.h"
-#import <Accelerate/Accelerate.h>
 
 
 @implementation PitchDetector
+{
+    AudioConverterRef converter;
+    UInt32 maxSamples;
+    
+    UInt32 log2n;
+    UInt32 n;
+    
+    UInt32 stride;
+    UInt32 nOver2;
+    
+    FFTSetup fftSetup;
+    
+    COMPLEX_SPLIT   A;
+    float window[MAX_FRAMES], in_real[MAX_FRAMES], outputBuffer[MAX_FRAMES];
+    float *logmag, *displayData;
+    
+    SInt16 dataBuffer[MAX_FRAMES];
+}
+
 @synthesize lowBoundFrequency, hiBoundFrequency, sampleRate, delegate, running;
+
 
 #pragma mark Initialize Methods
 
@@ -29,120 +48,131 @@
     self.sampleRate = rate;
     self.delegate = initDelegate;
     
-    bufferLength = self.sampleRate/self.lowBoundFrequency;    
+    bufferLength = self.sampleRate/self.lowBoundFrequency;
+    maxSamples = MAX_FRAMES;
     
+    log2n = log2f(maxSamples); //bins
+    n = 1 << log2n;
     
-    hann = (float*) malloc(sizeof(float)*bufferLength);
-    vDSP_hann_window(hann, bufferLength, vDSP_HANN_NORM);
+    stride = 1;
+    nOver2 = n/2;
     
-    sampleBuffer = (SInt16*) malloc(512);
-    samplesInSampleBuffer = 0;
+    fftSetup = vDSP_create_fftsetup(log2n, FFT_RADIX2);
+    A.realp = (float *) malloc(nOver2 * sizeof(float));
+    A.imagp = (float *) malloc(nOver2 * sizeof(float));
+    logmag = malloc(sizeof(float)*nOver2);
+    displayData = malloc(sizeof(float)*n);
     
-    result = (float*) malloc(sizeof(float)*bufferLength);
-    
+    [self setupConverter];
+
     return self;
 }
 
 #pragma  mark Insert Samples
 
 - (void) addSamples:(SInt16 *)samples inNumberFrames:(int)frames {
-    int newLength = frames;
-    if(samplesInSampleBuffer>0) {
-        newLength += samplesInSampleBuffer;
-    }
     
-    SInt16 *newBuffer = (SInt16*) malloc(sizeof(SInt16)*newLength);
-    memcpy(newBuffer, sampleBuffer, samplesInSampleBuffer*sizeof(SInt16));
-    memcpy(&newBuffer[samplesInSampleBuffer], samples, frames*sizeof(SInt16));
+    memcpy((SInt16 *) dataBuffer, samples, frames * sizeof(SInt16));
     
-    free(sampleBuffer);
-    sampleBuffer = newBuffer;
-    samplesInSampleBuffer = newLength;
+    //-- window
     
-    if(samplesInSampleBuffer>(self.sampleRate/self.lowBoundFrequency)) {
-        if(!self.running) {
-            [self performSelectorInBackground:@selector(performWithNumFrames:) withObject:[NSNumber numberWithInt:newLength]];
-            self.running = YES;
-        }
-        samplesInSampleBuffer = 0;
-    } else {
-        //printf("NOT ENOUGH SAMPLES: %d\n", newLength);
-    }
-}
-
-
-#pragma mark Perform Auto Correlation
-
--(void) performWithNumFrames: (NSNumber*) numFrames;
-{
-    int n = numFrames.intValue; 
-    float freq = 0;
-
-    SInt16 *samples = sampleBuffer;
-        
-    int returnIndex = 0;
-    float sum;
-    bool goingUp = false;
-    float normalize = 0;
-        
-    for(int i = 0; i<n; i++) {
-        sum = 0;
-        for(int j = 0; j<n; j++) {
-            sum += (samples[j]*samples[j+i])*hann[j];
-        }
-        if(i ==0 ) normalize = sum;
-        result[i] = sum/normalize;
-    }
+    UInt32 windowSize = maxSamples;
+    memset(window, 0, windowSize * sizeof(float));
+    //vDSP_hann_window(window, windowSize, 0);
+    vDSP_blkman_window(window, windowSize, 1);
+    
+    [self convertInt16ToFloat:dataBuffer Output:outputBuffer Capacity:frames];
+    
+    vDSP_vmul(outputBuffer, 1, window, 1, in_real, 1, maxSamples);
+    
+    vDSP_ctoz((COMPLEX*)in_real, 2, &A, 1, maxSamples/2);
+    
+    vDSP_fft_zrip(fftSetup, &A, stride, log2n, FFT_FORWARD);
+    
+    vDSP_ztoc(&A, 1, (COMPLEX *)in_real, 2, nOver2);
     
     
-    for(int i = 0; i<n-8; i++) {
-        if(result[i]<0) {
-            i+=2; // no peaks below 0, skip forward at a faster rate
-        } else {
-            if(result[i]>result[i-1] && goingUp == false && i >1) {
-        
-                //local min at i-1
-            
-                goingUp = true;
-            
-            } else if(goingUp == true && result[i]<result[i-1]) {
-                
-                //local max at i-1
-            
-                if(returnIndex==0 && result[i-1]>result[0]*0.95) {
-                    returnIndex = i-1;
-                    break; 
-                    //############### NOTE ##################################
-                    // My implemenation breaks out of this loop when it finds the first peak.
-                    // This is (probably) the greatest source of error, so if you would like to
-                    // improve this algorithm, start here. the next else if() will trigger on 
-                    // future local maxima (if you first take out the break; above this paragraph)
-                    //#######################################################
-                } else if(result[i-1]>result[0]*0.85) {
-                }
-                goingUp = false;
-            }       
+    A.imagp[0] = 0.0f;
+    vDSP_zvmags(&A, 1, A.realp, 1, nOver2);
+    bzero(A.imagp, (nOver2) * sizeof(float));
+    
+    // scale
+    float scale = 1.0f / (2.0f*(float)n);
+    vDSP_vsmul(A.realp, 1, &scale, A.realp, 1, nOver2);
+    
+    // step 2 get log for cepstrum
+    for (int i=0; i < nOver2; i++)
+        logmag[i] = logf(sqrtf(A.realp[i]));
+    
+    
+    // configure float array into acceptable input array format (interleaved)
+    vDSP_ctoz((COMPLEX*)logmag, 2, &A, 1, nOver2);
+    
+    // create cepstrum
+    vDSP_fft_zrip(fftSetup, &A, stride, log2n-1, FFT_INVERSE);
+    
+    //convert interleaved to real
+    vDSP_ztoc(&A, 1, (COMPLEX*)displayData, 2, nOver2);
+    
+    
+    int currentBin = 0;
+    float dominantFrequencyAmp = 0;
+    
+    // find peak of cepstrum
+    for (int i=0; i < nOver2; i++){
+        //get current frequency magnitude
+        float freq = displayData[i];
+        if (freq > dominantFrequencyAmp) {
+            // DLog("Bufferer filled %f", displayData[i]);
+            dominantFrequencyAmp = freq;
+            currentBin = i;
         }
     }
-    
-    freq =self.sampleRate/interp(result[returnIndex-1], result[returnIndex], result[returnIndex+1], returnIndex);
-    if(freq >= 27.5 && freq <= 4500.0) {
+
+    float freq = currentBin * sampleRate/frames;
+    //if(freq >= self.lowBoundFrequency && freq <= self.hiBoundFrequency) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [delegate updatedPitch:freq];
-        }); 
-    }
-    self.running = NO;
+        });
+    //}
 }
 
+- (void)convertInt16ToFloat:(void*) buf Output: (float *) outputBuf Capacity: (size_t) capacity
+{
+    OSStatus err;
+    UInt32 inSize = capacity*sizeof(SInt16);
+    UInt32 outSize = capacity*sizeof(float);
+    err = AudioConverterConvertBuffer(converter, inSize, buf, &outSize, outputBuf);
+}
 
-float interp(float y1, float y2, float y3, int k);
-float interp(float y1, float y2, float y3, int k) {
+- (void) setupConverter
+{
+    OSStatus err;
     
-    float d, kp;
-    d = (y3 - y1) / (2 * (2 * y2 - y1 - y3));
-    //printf("%f = %d + %f\n", k+d, k, d);
-    kp  =  k + d;
-    return kp;
+    size_t bytesPerSample = sizeof(float);
+    AudioStreamBasicDescription outFormat = {0};
+    outFormat.mFormatID = kAudioFormatLinearPCM;
+    outFormat.mFormatFlags = kAudioFormatFlagIsFloat | kAudioFormatFlagIsPacked;
+    outFormat.mBitsPerChannel = 8 * bytesPerSample;
+    outFormat.mFramesPerPacket = 1;
+    outFormat.mChannelsPerFrame = 1;
+    outFormat.mBytesPerPacket = bytesPerSample * outFormat.mFramesPerPacket;
+    outFormat.mBytesPerFrame = bytesPerSample * outFormat.mChannelsPerFrame;
+    outFormat.mSampleRate = sampleRate;
+    
+    AudioStreamBasicDescription audioFormat = {0};
+    audioFormat.mSampleRate			= 44100.00;
+    audioFormat.mFormatID			= kAudioFormatLinearPCM;
+    audioFormat.mFormatFlags		= kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsPacked;
+    audioFormat.mFramesPerPacket	= 1;
+    audioFormat.mChannelsPerFrame	= 1;
+    audioFormat.mBitsPerChannel		= 16;
+    audioFormat.mBytesPerPacket		= 2;
+    audioFormat.mBytesPerFrame		= 2;
+    
+    
+    const AudioStreamBasicDescription inFormat = audioFormat;
+    err = AudioConverterNew(&inFormat, &outFormat, &converter);
 }
-@end
 
+@end
