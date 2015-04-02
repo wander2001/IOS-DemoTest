@@ -7,10 +7,9 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-#import "SoundBankPlayer.h"
 #import "ListenerViewController.h"
 
-#define OFFSET 20;
+#define OFFSET 20
 
 @interface ListenerViewController ()
 
@@ -31,15 +30,25 @@
     NSMutableSet *_questionNotes;
     NSNumber *currentNode;
     BOOL isRecording;
+    NSInteger offset;
 }
 
 @synthesize tableData,table;
 
 - (void) generateQuestion
 {
-    [_questionNotes addObject: @60];
-    [_questionNotes addObject: @64];
-    [_questionNotes addObject: @67];
+    [_questionNotes removeAllObjects];
+    
+    [_questionNotes addObject: @(60 + offset)];
+    [_questionNotes addObject: @(64 + offset)];
+    [_questionNotes addObject: @(67 + offset)];
+    
+    NSInteger tmp = 0;
+    do {
+        tmp = arc4random() % 6;
+    } while (offset == tmp);
+    offset= tmp;
+
 }
 
 -(void)load
@@ -60,6 +69,7 @@
     _selectedNotes = [[NSMutableSet alloc] init];
     _questionNotes = [[NSMutableSet alloc] init];
     
+    offset = 0;
     [self generateQuestion];
     
     //_soundBankPlayer = [[SoundBankPlayer alloc] init];
@@ -145,12 +155,13 @@
     //value = [self median:value];
     int noteNum = [self closestCharForFrequency:value] + OFFSET;
     currentNode = [NSNumber numberWithInt:noteNum];
-    self.freqLabel.text = [NSString stringWithFormat:@"%3.1f Hz & Note:%d", value, noteNum];
+    self.freqLabel.text = [NSString stringWithFormat:@"%3.1f Hz", value];
     
 }
 
 - (int)closestCharForFrequency:(float)frequency {
     int n = (12 * log2f(frequency / 440) + 0.5) + 49; //round
+    if (n < 0) n = 0;
     return n;
 }
 
@@ -234,6 +245,10 @@
     } else {
         self.result.image = [UIImage imageNamed:@"wrong.jpeg"];
     }
+}
+
+- (IBAction)change:(id)sender {
+    [self generateQuestion];
 }
 
 - (IBAction)C:(id)sender {

@@ -31,6 +31,7 @@
 - (IBAction)play:(id)sender;
 - (IBAction)add:(id)sender;
 - (IBAction)verify:(id)sender;
+- (IBAction)change:(id)sender;
 
 #pragma mark keyboard
 - (IBAction)C:(id)sender;

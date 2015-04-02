@@ -77,7 +77,7 @@ Note;
 
     NSString *_soundBankName;      // name of the current sound bank
     
-    SInt16 dataBuffer[MAX_FRAMES];
+    SInt16 *_dataBuffer;
 }
 @synthesize audioUnit, audioFormat, delegate;
 
@@ -86,6 +86,7 @@ Note;
 {
     [self tearDownAudio];
     [self tearDownAudioSession];
+    free(_dataBuffer);
 }
 
 - (void)setSoundBank:(NSString *)newSoundBankName
@@ -521,6 +522,8 @@ void checkStatus(OSStatus status) {
         _loopNotes = NO;
         [self initNotes];
         [self setUpAudioSession];
+        
+        _dataBuffer = (SInt16 *)malloc(sizeof(SInt16) * MAX_FRAMES);
     
         OSStatus status;
         
@@ -603,9 +606,9 @@ static OSStatus recordingCallback(void *inRefCon,
     AudioController *THIS = (__bridge AudioController*) inRefCon;
     
     THIS->bufferList.mNumberBuffers = 1;
-    THIS->bufferList.mBuffers[0].mDataByteSize = sizeof(THIS->dataBuffer);
+    THIS->bufferList.mBuffers[0].mDataByteSize = sizeof(SInt16) * inNumberFrames;
     THIS->bufferList.mBuffers[0].mNumberChannels = 1;
-    THIS->bufferList.mBuffers[0].mData = THIS->dataBuffer;
+    THIS->bufferList.mBuffers[0].mData = THIS->_dataBuffer;
     
     OSStatus status;
     
@@ -618,7 +621,7 @@ static OSStatus recordingCallback(void *inRefCon,
     checkStatus(status);
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        [THIS.delegate  receivedAudioSamples:(SInt16*)THIS->bufferList.mBuffers[0].mData length:MAX_FRAMES];
+        [THIS.delegate  receivedAudioSamples:(SInt16*)THIS->bufferList.mBuffers[0].mData length:inNumberFrames];
     }); 
     
     return noErr;

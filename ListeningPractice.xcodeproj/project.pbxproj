@@ -23,7 +23,6 @@
 		6F853FC41A95C1B300BB1FC7 /* PitchDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F853FC01A95C1B300BB1FC7 /* PitchDetector.m */; };
 		6F853FC51A95C1B300BB1FC7 /* TPCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F853FC11A95C1B300BB1FC7 /* TPCircularBuffer.c */; };
 		6F853FCF1A95C1F400BB1FC7 /* OpenALSupport.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F853FCB1A95C1F400BB1FC7 /* OpenALSupport.c */; };
-		6F853FD01A95C1F400BB1FC7 /* SoundBankPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F853FCE1A95C1F400BB1FC7 /* SoundBankPlayer.m */; };
 		6F853FE71A95C20A00BB1FC7 /* P200 Piano A#2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FD21A95C20A00BB1FC7 /* P200 Piano A#2.caf */; };
 		6F853FE81A95C20A00BB1FC7 /* P200 Piano A#3.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FD31A95C20A00BB1FC7 /* P200 Piano A#3.caf */; };
 		6F853FE91A95C20A00BB1FC7 /* P200 Piano A#4.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6F853FD41A95C20A00BB1FC7 /* P200 Piano A#4.caf */; };
@@ -89,8 +88,6 @@
 		6F853FC21A95C1B300BB1FC7 /* TPCircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPCircularBuffer.h; path = FFT/TPCircularBuffer.h; sourceTree = "<group>"; };
 		6F853FCB1A95C1F400BB1FC7 /* OpenALSupport.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = OpenALSupport.c; sourceTree = "<group>"; };
 		6F853FCC1A95C1F400BB1FC7 /* OpenALSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenALSupport.h; sourceTree = "<group>"; };
-		6F853FCD1A95C1F400BB1FC7 /* SoundBankPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundBankPlayer.h; sourceTree = "<group>"; };
-		6F853FCE1A95C1F400BB1FC7 /* SoundBankPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundBankPlayer.m; sourceTree = "<group>"; };
 		6F853FD21A95C20A00BB1FC7 /* P200 Piano A#2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano A#2.caf"; sourceTree = "<group>"; };
 		6F853FD31A95C20A00BB1FC7 /* P200 Piano A#3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano A#3.caf"; sourceTree = "<group>"; };
 		6F853FD41A95C20A00BB1FC7 /* P200 Piano A#4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano A#4.caf"; sourceTree = "<group>"; };
@@ -223,8 +220,6 @@
 			children = (
 				6F853FCB1A95C1F400BB1FC7 /* OpenALSupport.c */,
 				6F853FCC1A95C1F400BB1FC7 /* OpenALSupport.h */,
-				6F853FCD1A95C1F400BB1FC7 /* SoundBankPlayer.h */,
-				6F853FCE1A95C1F400BB1FC7 /* SoundBankPlayer.m */,
 			);
 			path = SoundBankPlayer;
 			sourceTree = "<group>";
@@ -413,7 +408,6 @@
 				6F853FCF1A95C1F400BB1FC7 /* OpenALSupport.c in Sources */,
 				6F1DD0B41A8D862D00838476 /* main.m in Sources */,
 				6F853FC41A95C1B300BB1FC7 /* PitchDetector.m in Sources */,
-				6F853FD01A95C1F400BB1FC7 /* SoundBankPlayer.m in Sources */,
 				6F853FC51A95C1B300BB1FC7 /* TPCircularBuffer.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
