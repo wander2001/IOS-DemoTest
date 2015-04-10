@@ -34,6 +34,7 @@
 }
 
 @synthesize tableData,table;
+@synthesize drawScale;
 
 - (void) generateQuestion
 {
@@ -254,6 +255,7 @@
 - (IBAction)C:(id)sender {
     [audioManager queueNote:60 gain:0.4f];
     [audioManager playQueuedNotes];
+    [drawScale addNote:@1];
 }
 
 - (IBAction)Cplus:(id)sender {

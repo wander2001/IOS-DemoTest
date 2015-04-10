@@ -215,12 +215,17 @@
                                     <action selector="record:" destination="BYZ-38-t0r" eventType="touchDown" id="xum-Do-Mt3"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KB6-nP-1ub" customClass="PRPDrawScale">
+                                <rect key="frame" x="34" y="449" width="700" height="200"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="768" height="1024"/>
                     <connections>
+                        <outlet property="drawScale" destination="KB6-nP-1ub" id="qlp-g1-BkH"/>
                         <outlet property="freqLabel" destination="D7p-Rj-3Jo" id="AoX-Wx-w5I"/>
                         <outlet property="recordButton" destination="OFf-p3-Db1" id="Wnz-uL-Jbf"/>
                         <outlet property="result" destination="oJf-Y6-cPo" id="Ioy-jL-0YD"/>
@@ -229,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7" y="229"/>
+            <point key="canvasLocation" x="-59" y="237"/>
         </scene>
     </scenes>
     <resources>

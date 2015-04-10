@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PRPDrawScale.h"
 #import "AudioController.h"
 #import "PitchDetector.h"
 
@@ -14,11 +15,14 @@
     PitchDetectorDelegate, AudioControllerDelegate,
     UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 {
+
+    PRPDrawScale *drawScale;
     AudioController *audioManager;
     PitchDetector *autoCorrelator;
     NSMutableArray *medianPitchFollow;
 }
 
+@property (strong, nonatomic) IBOutlet PRPDrawScale *drawScale;
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (weak, nonatomic) IBOutlet UILabel *freqLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *result;
