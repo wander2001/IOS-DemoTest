@@ -17,6 +17,8 @@
 @property (retain, nonatomic) NSString *fileToDraw;
 @property (strong, nonatomic) NSNumber *noteIncrease;
 
+-(void)undo;
+-(void)redo;
 -(void)addNote:(NSNumber*) note;
 -(void)increaseNotes:(NSNumber *) increase;
 -(void)currentData:(NSString *) playDate;

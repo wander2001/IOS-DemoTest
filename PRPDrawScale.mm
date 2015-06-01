@@ -31,6 +31,7 @@
 {
     NSNumber* currentNote;
     UIImageView* currentImageView;
+    NSUndoManager* undoManager;
 }
 @synthesize data;
 @synthesize fileToDraw;
@@ -41,23 +42,31 @@
 {
     self = [super initWithFrame:frame];
     if (self != nil) {
-
     }
     return self;
 }
 
 -(void)addNote:(NSNumber*) note {
-    if (data == nil) {
-        data = [[NSMutableArray alloc] init];
+    [self addNote:note isUndo:false];
+}
+
+-(void)addNote:(NSNumber*) note isUndo:(bool) undo {
+    if (undo) {
+        [[undoManager prepareWithInvocationTarget:self]removeNote:note isUndo:true];
     }
     [data addObject:note];
     //Update the view
     [self setNeedsDisplay];
 }
 
--(void)removeNote:(NSNumber*) note {
-    if (data == nil) {
-        data = [[NSMutableArray alloc] init];
+-(void)removeNOte:(NSNumber*) note {
+    [self removeNote:note isUndo: false];
+}
+
+-(void)removeNote:(NSNumber*) note isUndo:(bool) undo {
+    if (undo && [data count] > 0)
+    {
+        [[undoManager prepareWithInvocationTarget:self]addNote:[data objectAtIndex:[data count]-1] isUndo: true];
     }
     [data removeObject:note];
     //Update the view
@@ -70,15 +79,15 @@
     UITouch *touch = [touches anyObject];
     // Animate the first touch.
     CGPoint touchPoint = [touch locationInView:self];
-    currentImageView = [[UIImageView alloc] init];
+    /*currentImageView = [[UIImageView alloc] init];
     currentImageView.frame = CGRectMake(0,0, 20, 20);
     currentImageView.center = CGPointMake(kNoteOffsetX, touchPoint.y);
     [currentImageView setImage:[UIImage imageNamed:@"notelower.png"]];
-    
+    */
     currentNote = [self getNote:(int)touchPoint.x];
     
-   // [self addNote:currentNote];
-    [self addSubview:currentImageView];
+    [self addNote:currentNote];
+    //[self addSubview:currentImageView];
     
 }
 
@@ -90,16 +99,29 @@
     
     currentImageView.center = CGPointMake(kNoteOffsetX, touchPoint.y);
     
-   // NSNumber* note = [self getNote:(int)touchPoint.y];
+    NSNumber* note = [self getNote:(int)touchPoint.y];
     
-    /*if (![currentNote isEqualToNumber: note])
-    {
-        [data removeObject:currentNote];
-        currentNote = note;
-        [self addNote:currentNote];
-    }*/
+    [data removeObject:currentNote];
+    currentNote = note;
+    [self addNote:currentNote];
     
 }
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    // We only support single touches, so anyObject retrieves just that touch from touches.
+    UITouch *touch = [touches anyObject];
+    // Animate the first touch.
+    CGPoint touchPoint = [touch locationInView:self];
+    
+    NSNumber* note = [self getNote:(int)touchPoint.y];
+    
+    [data removeObject:currentNote];
+    currentNote = note;
+    [self addNote:currentNote isUndo: true];
+}
+
+
 
 -(void)currentData:playDate{
     
@@ -159,8 +181,28 @@
     [tempImage removeFromSuperview];
 }
 
+- (void)undo {
+    [undoManager undo];
+    [self setNeedsDisplay];
+}
+
+- (void)redo {
+    [undoManager redo];
+    [self setNeedsDisplay];
+}
+
 - (void)drawRect:(CGRect)rect
 {
+    if (undoManager == nil)
+    {
+        undoManager = [[NSUndoManager alloc] init];
+        [undoManager setLevelsOfUndo:20];
+    }
+    
+    if (data == nil)
+    {
+        data = [[NSMutableArray alloc] init];
+    }
     //Get the graphics context
     CGContextRef context = UIGraphicsGetCurrentContext();
     

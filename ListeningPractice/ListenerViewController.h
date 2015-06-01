@@ -31,6 +31,8 @@
 - (IBAction)record:(id)sender;
 
 
+- (IBAction)undo:(id)sender;
+- (IBAction)redo:(id)sender;
 
 - (IBAction)play:(id)sender;
 - (IBAction)add:(id)sender;

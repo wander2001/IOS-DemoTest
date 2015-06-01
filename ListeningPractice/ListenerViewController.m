@@ -225,6 +225,14 @@
 
 }
 
+- (IBAction)undo:(id)sender {
+    [drawScale undo];
+}
+
+- (IBAction)redo:(id)sender {
+    [drawScale redo];
+}
+
 - (IBAction)play:(id)sender {
     for (NSNumber *questionNote in _questionNotes) {
         [audioManager queueNote:[questionNote intValue] gain:0.4f];
@@ -255,7 +263,6 @@
 - (IBAction)C:(id)sender {
     [audioManager queueNote:60 gain:0.4f];
     [audioManager playQueuedNotes];
-    [drawScale addNote:@1];
 }
 
 - (IBAction)Cplus:(id)sender {
@@ -364,6 +371,5 @@
     [table reloadData];
     
 }
-
 
 @end
