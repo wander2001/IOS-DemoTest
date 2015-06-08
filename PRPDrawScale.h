@@ -14,13 +14,18 @@
 }
 
 @property (strong, nonatomic) NSMutableArray *data;
+@property (strong, nonatomic) NSMutableSet *answer;
+@property (strong, nonatomic) NSMutableSet *pitch;
 @property (retain, nonatomic) NSString *fileToDraw;
 @property (strong, nonatomic) NSNumber *noteIncrease;
 
+-(void)clear;
 -(void)undo;
 -(void)redo;
 -(void)addNote:(NSNumber*) note;
+-(void)addPitch:(NSNumber*) note;
 -(void)increaseNotes:(NSNumber *) increase;
 -(void)currentData:(NSString *) playDate;
+-(void)setAnswer:(NSMutableSet *)answer;
 
 @end

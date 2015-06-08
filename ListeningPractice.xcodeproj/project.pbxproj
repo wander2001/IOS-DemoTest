@@ -14,6 +14,10 @@
 		6F1DD0BF1A8D862D00838476 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0BE1A8D862D00838476 /* Images.xcassets */; };
 		6F1DD0C21A8D862D00838476 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DD0C01A8D862D00838476 /* LaunchScreen.xib */; };
 		6F1DD0CE1A8D862D00838476 /* ListeningPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DD0CD1A8D862D00838476 /* ListeningPracticeTests.m */; };
+		6F39C20B1B2404FD00E15737 /* semibreve1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F39C20A1B2404FD00E15737 /* semibreve1.png */; };
+		6F39C20D1B24050500E15737 /* semibreve0.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F39C20C1B24050500E15737 /* semibreve0.png */; };
+		6F39C2101B24DFC600E15737 /* semibreve0-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F39C20E1B24DFC600E15737 /* semibreve0-1.png */; };
+		6F39C2111B24DFC600E15737 /* semibreve1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F39C20F1B24DFC600E15737 /* semibreve1-1.png */; };
 		6F633AF91ACCEFF9002A85AC /* PRPDrawScale.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6F633AF81ACCEFF9002A85AC /* PRPDrawScale.mm */; };
 		6F633B051ACCF019002A85AC /* bassclef.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F633AFB1ACCF019002A85AC /* bassclef.png */; };
 		6F633B061ACCF019002A85AC /* notehigher.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F633AFC1ACCF019002A85AC /* notehigher.png */; };
@@ -85,6 +89,10 @@
 		6F1DD0C71A8D862D00838476 /* ListeningPracticeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ListeningPracticeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F1DD0CC1A8D862D00838476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F1DD0CD1A8D862D00838476 /* ListeningPracticeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListeningPracticeTests.m; sourceTree = "<group>"; };
+		6F39C20A1B2404FD00E15737 /* semibreve1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = semibreve1.png; sourceTree = "<group>"; };
+		6F39C20C1B24050500E15737 /* semibreve0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = semibreve0.png; sourceTree = "<group>"; };
+		6F39C20E1B24DFC600E15737 /* semibreve0-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "semibreve0-1.png"; sourceTree = "<group>"; };
+		6F39C20F1B24DFC600E15737 /* semibreve1-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "semibreve1-1.png"; sourceTree = "<group>"; };
 		6F45F73E1A943CDB007E8287 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		6F633AF71ACCEFF9002A85AC /* PRPDrawScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRPDrawScale.h; sourceTree = "<group>"; };
 		6F633AF81ACCEFF9002A85AC /* PRPDrawScale.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PRPDrawScale.mm; sourceTree = "<group>"; };
@@ -238,6 +246,10 @@
 		6F633AFA1ACCF019002A85AC /* ScaleDesign */ = {
 			isa = PBXGroup;
 			children = (
+				6F39C20E1B24DFC600E15737 /* semibreve0-1.png */,
+				6F39C20F1B24DFC600E15737 /* semibreve1-1.png */,
+				6F39C20C1B24050500E15737 /* semibreve0.png */,
+				6F39C20A1B2404FD00E15737 /* semibreve1.png */,
 				6F633AFB1ACCF019002A85AC /* bassclef.png */,
 				6F633AFC1ACCF019002A85AC /* notehigher.png */,
 				6F633AFD1ACCF019002A85AC /* notehigherbar.png */,
@@ -412,6 +424,7 @@
 				6F853FF61A95C20A00BB1FC7 /* P200 Piano F#4.caf in Resources */,
 				6F853FF91A95C20A00BB1FC7 /* P200 Piano F#7.caf in Resources */,
 				6F633B091ACCF019002A85AC /* notehighersharp.png in Resources */,
+				6F39C2101B24DFC600E15737 /* semibreve0-1.png in Resources */,
 				6F633B0D1ACCF019002A85AC /* notelowersharp.png in Resources */,
 				6F853FED1A95C20A00BB1FC7 /* P200 Piano C7.caf in Resources */,
 				6F633B051ACCF019002A85AC /* bassclef.png in Resources */,
@@ -428,6 +441,7 @@
 				6F853FF51A95C20A00BB1FC7 /* P200 Piano F#3.caf in Resources */,
 				6F853FF41A95C20A00BB1FC7 /* P200 Piano F#2.caf in Resources */,
 				6F853FEB1A95C20A00BB1FC7 /* P200 Piano A#7.caf in Resources */,
+				6F39C20B1B2404FD00E15737 /* semibreve1.png in Resources */,
 				6F853FFB1A95C20A00BB1FC7 /* Piano.plist in Resources */,
 				6F853FF81A95C20A00BB1FC7 /* P200 Piano F#6.caf in Resources */,
 				6F853FE91A95C20A00BB1FC7 /* P200 Piano A#4.caf in Resources */,
@@ -442,6 +456,8 @@
 				6F1DD0C21A8D862D00838476 /* LaunchScreen.xib in Resources */,
 				6F1DD0BF1A8D862D00838476 /* Images.xcassets in Resources */,
 				6F853FF31A95C20A00BB1FC7 /* P200 Piano D6.caf in Resources */,
+				6F39C2111B24DFC600E15737 /* semibreve1-1.png in Resources */,
+				6F39C20D1B24050500E15737 /* semibreve0.png in Resources */,
 				6F853FE81A95C20A00BB1FC7 /* P200 Piano A#3.caf in Resources */,
 				6F633B0E1ACCF019002A85AC /* trebleclef.png in Resources */,
 				6F853FF21A95C20A00BB1FC7 /* P200 Piano D5.caf in Resources */,

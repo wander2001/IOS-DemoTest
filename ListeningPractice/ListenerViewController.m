@@ -27,29 +27,33 @@
     CFTimeInterval _arpeggioStartTime;
     CFTimeInterval _arpeggioDelay;
     NSMutableSet *_selectedNotes;
+    NSMutableArray *_questionList;
     NSMutableSet *_questionNotes;
+    
+    int currentQuestionIndex;
     NSNumber *currentNode;
     BOOL isRecording;
     NSInteger offset;
 }
 
-@synthesize tableData,table;
 @synthesize drawScale;
+
 
 - (void) generateQuestion
 {
-    [_questionNotes removeAllObjects];
+    _questionNotes = [[NSMutableSet alloc] init];
     
     [_questionNotes addObject: @(60 + offset)];
     [_questionNotes addObject: @(64 + offset)];
     [_questionNotes addObject: @(67 + offset)];
+    
+    [_questionList addObject:_questionNotes];
     
     NSInteger tmp = 0;
     do {
         tmp = arc4random() % 6;
     } while (offset == tmp);
     offset= tmp;
-
 }
 
 -(void)load
@@ -69,14 +73,15 @@
     // Create the player and tell it which sound bank to use.
     _selectedNotes = [[NSMutableSet alloc] init];
     _questionNotes = [[NSMutableSet alloc] init];
+    _questionList = [[NSMutableArray alloc] init];
+    
     
     offset = 0;
     [self generateQuestion];
+    currentQuestionIndex = 0;
     
     //_soundBankPlayer = [[SoundBankPlayer alloc] init];
     //[_soundBankPlayer setSoundBank:@"Piano"];
-    
-    tableData = [[NSMutableArray alloc] init];
 
     
     // We use a timer to play arpeggios.
@@ -240,15 +245,9 @@
     [audioManager playQueuedNotes];
 }
 
-- (IBAction)add:(id)sender {
-    if (currentNode != nil) {
-        [_selectedNotes addObject:currentNode];
-        [tableData addObject: [currentNode stringValue]];
-        [table reloadData];
-    }
-}
-
 - (IBAction)verify:(id)sender {
+    _selectedNotes = [NSMutableSet setWithArray:drawScale.data];
+    
     if ([_questionNotes isEqual: _selectedNotes]) {
         self.result.image = [UIImage imageNamed:@"correct.jpeg"];
     } else {
@@ -256,8 +255,34 @@
     }
 }
 
-- (IBAction)change:(id)sender {
-    [self generateQuestion];
+- (IBAction)next:(id)sender {
+    currentQuestionIndex++;
+    if (_questionNotes == [_questionList lastObject]) {
+        [self generateQuestion];
+    } else {
+        _questionNotes = [_questionList objectAtIndex:currentQuestionIndex];
+    }
+    [self play: sender];
+    
+    [drawScale clear];
+}
+
+- (IBAction)prev:(id)sender {
+    if(currentQuestionIndex > 0) {
+       currentQuestionIndex--;
+        _questionNotes = [_questionList objectAtIndex:currentQuestionIndex];
+    }
+    [self play: sender];
+    
+    [drawScale clear];
+}
+
+- (IBAction)answer:(id)sender {
+    [drawScale setAnswer: [NSMutableSet setWithSet:_questionNotes]];
+}
+
+- (IBAction)addPitch:(id)sender {
+    [drawScale addPitch: currentNode];
 }
 
 - (IBAction)C:(id)sender {
@@ -323,53 +348,6 @@
 - (IBAction)C5:(id)sender {
     [audioManager queueNote:72 gain:0.4f];
     [audioManager playQueuedNotes];
-}
-
-#pragma - markup TableView Delegate Methods
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-
-{
-    
-    return [tableData count];
-    
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-
-{
-    
-    static NSString *simpleTableIdentifier = @"SimpleTableItem";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-    if (cell == nil) {
-        
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-        
-    }
-    
-    cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
-    cell.textLabel.textAlignment = NSTextAlignmentCenter;
-    
-    return cell;
-    
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-
-{
-    NSNumber *item = [NSNumber numberWithInteger:[self.tableData[indexPath.row] integerValue]];
-    [_selectedNotes removeObject:item];
-    [self.tableData removeObjectAtIndex:indexPath.row];
-    
-    [table reloadData];
-    
 }
 
 @end

@@ -12,8 +12,7 @@
 #import "PitchDetector.h"
 
 @interface ListenerViewController : UIViewController <
-    PitchDetectorDelegate, AudioControllerDelegate,
-    UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+    PitchDetectorDelegate, AudioControllerDelegate>
 {
 
     PRPDrawScale *drawScale;
@@ -26,8 +25,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (weak, nonatomic) IBOutlet UILabel *freqLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *result;
-@property (weak, nonatomic) IBOutlet UITableView *table;
-@property (nonatomic,retain) NSMutableArray *tableData;
 - (IBAction)record:(id)sender;
 
 
@@ -35,9 +32,12 @@
 - (IBAction)redo:(id)sender;
 
 - (IBAction)play:(id)sender;
-- (IBAction)add:(id)sender;
 - (IBAction)verify:(id)sender;
-- (IBAction)change:(id)sender;
+- (IBAction)next:(id)sender;
+- (IBAction)prev:(id)sender;
+- (IBAction)answer:(id)sender;
+- (IBAction)addPitch:(id)sender;
+
 
 #pragma mark keyboard
 - (IBAction)C:(id)sender;
