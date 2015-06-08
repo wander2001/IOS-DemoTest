@@ -73,7 +73,7 @@
 
 -(void)addNote:(NSNumber*) note isUndo:(bool) undo {
     if (undo) {
-        [[undoManager prepareWithInvocationTarget:self]removeNoteAtIndex:[data count] isUndo:true];
+        [[undoManager prepareWithInvocationTarget:self]removeNoteAtIndex:(int)[data count] isUndo:true];
     }
     [data addObject:note];
     //Update the view
@@ -133,7 +133,7 @@
     
     NSNumber* note = [self encodeNote:[self getNote:(int)touchPoint.y]];
     
-    int index = data.count - 1;
+    int index = (int)[data count] - 1;
     if (index >= 0) {
         [data removeObjectAtIndex: index];
     }
@@ -151,7 +151,7 @@
     
     NSNumber* note = [self encodeNote:[self getNote:(int)touchPoint.y]];
     
-    int index = data.count - 1;
+    int index = (int)[data count] - 1;
     if (index >= 0) {
         [data removeObjectAtIndex: index];
     }

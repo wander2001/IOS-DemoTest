@@ -128,7 +128,7 @@ float dsp_acf_II_fft_unscaled(const FFTSetup setup, float const* signal, COMPLEX
     vDSP_ztoc(temp, 1, (DSPComplex*)acf, 2, complex_length);
     
     int minP = 20;
-    int maxP = complex_length;
+    int maxP = (int)complex_length;
     int bestP = minP;
     for ( int p = minP; p <= maxP; p++ )
         if ( acf[p] > acf[bestP] )
