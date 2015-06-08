@@ -265,6 +265,7 @@
     [self play: sender];
     
     [drawScale clear];
+    self.result.image = nil;
 }
 
 - (IBAction)prev:(id)sender {
@@ -275,6 +276,7 @@
     [self play: sender];
     
     [drawScale clear];
+    self.result.image = nil;
 }
 
 - (IBAction)answer:(id)sender {
