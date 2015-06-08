@@ -249,9 +249,9 @@
     _selectedNotes = [NSMutableSet setWithArray:drawScale.data];
     
     if ([_questionNotes isEqual: _selectedNotes]) {
-        self.result.image = [UIImage imageNamed:@"correct.jpeg"];
+        self.result.image = [UIImage imageNamed:@"correct.png"];
     } else {
-        self.result.image = [UIImage imageNamed:@"wrong.jpeg"];
+        self.result.image = [UIImage imageNamed:@"wrong.png"];
     }
 }
 

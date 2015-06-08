@@ -369,6 +369,7 @@
     if (data == nil)
     {
         data = [[NSMutableArray alloc] init];
+        [self setDisplay];
     }
     
     if (pitch == nil) {
@@ -446,8 +447,6 @@
         UIImage *semibreve1 = [self imageWithImage:[UIImage imageNamed:@"semibreve1.png"] scaledToWidth:1.2];
         UIImage *semibreve1_1 = [self imageWithImage:[UIImage imageNamed:@"semibreve1-1.png"] scaledToWidth:1.2];
         
-        
-        [self setDisplay];
         NSNumber* noteNumber = [self decodeNote:[dataSet objectAtIndex:i]];
         int note = [noteNumber intValue];
         CGPoint imagePoint = CGPointMake(xOffset+(kStepX*(i)),display[note]); //kNoteOffsetX
